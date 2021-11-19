@@ -24,7 +24,9 @@ li {
 html {
     font-size: 10px;
     overflow-x: hidden;
-    cursor: url(mouse.png), url(mouse.cur), auto
+    cursor: url(mouse.png), url(mouse.cur), auto;
+    transition: 0.5s all;
+    overflow-x: hidden;
 }
 
 html {
@@ -80,6 +82,7 @@ h2 {
     position: relative;
     width: 100%;
     margin: 0 auto;
+    overflow: hidden;
 }
 
 .clearfix::after {
@@ -92,7 +95,7 @@ h2 {
 
 .container {
     position: relative;
-    max-width: 140rem;
+    width: 140rem;
     margin: 0 auto;
 }
 
@@ -100,22 +103,21 @@ h2 {
 
 .header {
     position: fixed;
+    display: block;
     width: 100%;
-    left: 50%;
-    transform: translate(-50%, 0);
-    line-height: 80px;
-
+    height: 8rem;
+    line-height: 8rem;
     z-index: 999;
 }
 
 .logo {
     position: absolute;
-    left: 0;
+    left: 5%;
 }
 
 .menu {
     position: absolute;
-    right: 0;
+    right: 5%;
 }
 
 
@@ -212,6 +214,7 @@ h2 {
 
 .main {
     background: url("../images/main-bg.jpg") center;
+    background-size: cover !important;
 }
 
 .main h1 {
@@ -544,40 +547,10 @@ span.it-bag::after {
 
 .pic-grid div {
     display: inline-block;
-    width: 24.5%;
-    height: 25rem;
+    width: 33%;
+    height: 55rem;
     background-color: #eee;
-    margin: -0.2rem;
 }
-
-.pic-grid div:nth-child(1) {
-    background:url("../images/joygram/joygram01.jpg") no-repeat center;
-}
-.pic-grid div:nth-child(2) {
-    background:url("../images/joygram/joygram02.jpg") no-repeat center;
-}
-.pic-grid div:nth-child(3) {
-    background:url("../images/joygram/joygram03.jpg") no-repeat center;
-}
-.pic-grid div:nth-child(4) {
-    background:url("../images/joygram/joygram04.jpg") no-repeat center;
-}
-.pic-grid div:nth-child(5) {
-    background:url("../images/joygram/joygram05.jpg") no-repeat center;
-}
-
-.pic-grid div:nth-child(6) {
-    background:url("../images/joygram/joygram06.jpg") no-repeat center;
-}
-
-.pic-grid div:nth-child(7) {
-    background:url("../images/joygram/joygram07.jpg") no-repeat center;
-}
-
-.pic-grid div:nth-child(8) {
-    background:url("../images/joygram/joygram08.jpg") no-repeat center;
-}
-
 
 
 /* contact */
@@ -629,4 +602,81 @@ span.it-bag::after {
 
 .footer p span {
     font-weight: 500;
+}
+
+
+@media screen and (max-width: 1410px) {
+    .competency .container p {font-size:1.7rem}
+    .competency .left-wrap div:last-child {height: 19rem}
+}
+
+@media screen and (max-width: 1250px) {
+    /* header & container */
+    .container {width:110rem;}
+    .logo img {width: 80%;}
+    .menu img {width: 80%;}
+
+    /* about */
+    .left-pic {height: 48.5rem; background-size: 70rem; background-position: center;}
+
+    .about .container .right-wrap {width:51.5%}
+    .education, .license {padding:2rem;}
+    .education ul li, .license ul li {font-size: 1.6rem;}
+    .education ul li span, .license ul li span {width: 5rem; font-size: 1.6rem;}
+    .skill div {width:32.9%}
+
+    /* competency */
+    .competency .container .left-wrap {width: 57%;}
+    .competency .left-wrap div:last-child {height: 16.3rem}
+    .competency .container span {font-size: 2.1rem;}
+    .competency .container p {font-size:1.6rem}
+    
+    span.commu-bag::after, span.res-bag::after {width: 14.7rem; margin-top: 1rem;}
+    
+    .competency .container .right-wrap {width: 43%;}
+    .competency .container .right-wrap img {top: 5rem; padding-left: 3rem;}
+
+    /* joygram */
+    .pic-grid div {width: 100%; height: 35rem}
+}
+
+@media screen and (max-width: 1100px) {
+    .container {width: 96rem}
+
+    /* about */
+    .about .container .left-wrap,
+    .about .container .right-wrap {float: none; width: 100%;}
+
+    .left-pic {height: 50rem; background-size: 96rem; background-position: 0 -13rem;}
+
+    .education {margin-top: 1rem; border-radius: 0; float: left; width: 54%; margin-bottom: 1rem}
+    .license {border-radius: 0 0 2.5rem 0; float: right; width: 45%; height: 22rem; margin-bottom: 1rem}
+    .education h2, .license h2 {font-size: 2.1rem;}
+
+    .skill {margin-top: 0;}
+    .skill div {line-height: 4.3rem;}
+    .competency .container .right-wrap {display: none;}
+    .competency .container .left-wrap {width: 100%; float:none;}
+    .competency .left-wrap div {width: 95%; margin: 0 auto; margin-bottom: 1.5rem}
+
+    .competency .container span {font-size:2.4rem;}
+    .competency .container p {font-size: 1.8rem;}
+}
+
+@media screen and (max-width: 959px) {
+    .container {width: 75rem;}
+
+    
+    .main-banner {padding-top: 8rem;}
+    .main-banner .left-wrap,
+    .main-banner .right-wrap {float: none; width: auto;}
+    
+    .main-banner .left-wrap {padding-top: 10rem; z-index: 1;}
+    .main-banner .right-wrap {padding-left: 0; margin-top: -42rem;}
+    
+    .text-img {text-align: center;}
+    .more-ico {position: relative; display: block; width: 48.3rem; margin: 0 auto}
+    .more-ico img {position:absolute; display: block; right:0;}
+    .main-pic {float: none; opacity: 0.7;}
+    .heart-ico {display: none;}
 }

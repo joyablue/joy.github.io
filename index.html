@@ -13,20 +13,21 @@
   <link rel="stylesheet" href="css/font.css">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/jquery.min.js"></script>
-    <!--[if lt IE 9]>
+  <!--[if lt IE 9]>
         <script src="js/html5shiv.js"></script>
     <![endif]-->
-    <script src="js/prefixfree.min.js"></script>
-    <script src="js/respond.min.js"></script> 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="js/script.js"></script>
+  <!-- vender-prefix -->
+  <!-- <script type="text/javascript" src="js/prefixfree.min.js"></script> -->
+  <script src="js/prefixfree.min.js"></script>
+  <script src="js/respond.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/script.js"></script>
 </head>
 
 <body>
   <header id="header" class="header">
-    <div class="container">
-      <a href="#main" class="logo"><img src="images/icon/logo.png" alt="logo"></a>
-      <a href="#" class="menu"><img src="images/icon/menu.png" alt="menu"></a>
+    <a href="#main" class="logo"><img src="images/icon/logo.png" alt="logo"></a>
+    <a href="#" class="menu"><img src="images/icon/menu.png" alt="menu"></a>
     </div>
     <div class="menu_bg"></div>
     <div class="sidebar_menu">
@@ -80,7 +81,7 @@
           </div>
           <div class="left-pic"></div>
         </div>
-        <div class="right-wrap" data-aos="fade-left" data-aos-delay="1000">
+        <div class="right-wrap" data-aos="fade-left" data-aos-delay="300">
           <div class="education">
             <h2>EDUCATION</h2>
             <ul>
@@ -111,27 +112,27 @@
     <section id="competency" class="section competency">
       <div class="container clearfix">
         <h1>COMPETENCY</h1>
-        <div class="left-wrap" data-aos="fade-right">
-          <div>
+        <div class="left-wrap">
+          <div data-aos="fade-right">
             <span class="res-bag">도전정신 &amp; 책임감</span>
             <p>대구텍스타일콤플렉스에서 기획전에 참가한 각 회사 제품의 상세페이지를 14일 기한 내, 약 50개
               정도 디자인 및 제작 해야 했을 때, 정말 앞이 까마득하고 막막했지만 팀원들을 잘 다독이고 이끌어
               만족스러운 결과물을 도출하여 책임감을 업그레이드 할 수 있었습니다.</p>
           </div>
-          <div>
+          <div data-aos="fade-right" data-aos-delay="300">
             <span class="commu-bag">소통 능력 &amp; 팀워크</span>
             <p>상호 커뮤니션을 통해 팀 모두에게 만족을 주고자 노력하며 팀 분위기가 다운되지 않도록 분위기
               메이커를 자처하는 편입니다. 또한, 텔레콤에서 일했던 경력을 발판삼아 다양한 연령대와 소통이
               가능하여 클라이언트와 원활한 소통이 가능합니다.</p>
           </div>
-          <div>
+          <div data-aos="fade-right" data-aos-delay="600">
             <span class="it-bag">IT 활용능력 &amp; 창의력</span>
             <p>끊임없이 자기 성장을 위해 노력하며 긍정적인 마인드를 끌어올려 실무 역량을 향상시키고자
               노력합니다. 직업이라는 것에 귀천이 없고 어떤 일이라도 쉬운 게 없는 만큼 다소 부족한 창의력
               향상과 리프레시를 위해 아이패드로 그림 그리기, 카메라로 사진 찍기 등의 활동을 하고 있습니다. </p>
           </div>
         </div>
-        <div class="right-wrap" data-aos="fade-left" data-aos-delay="1000">
+        <div class="right-wrap" data-aos="fade-left" data-aos-delay="900">
           <img src="images/competency/graphy.png" alt="competency">
         </div>
       </div>
@@ -140,21 +141,15 @@
       <div class="container">
         <h1>JOY<span><img src="images/joygram/star.png" alt=""></span>GRAM</h1>
         <div class="pic-grid" data-aos="zoom-in-up">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+          <div class="publishing"></div>
+          <div class="design"></div>
+          <div class="life"></div>
         </div>
       </div>
     </section>
     <section id="contact" class="section contact">
       <h1>CONTACT ME</h1>
-      <div class="qr-code" data-aos="fade-up"
-      data-aos-anchor-placement="top-bottom">
+      <div class="qr-code" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
         <img src="images/contact/qr.png" alt="">
       </div>
     </section>
@@ -165,4 +160,5 @@
     </div>
   </footer>
 </body>
+
 </html>
