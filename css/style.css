@@ -562,6 +562,7 @@ span.it-bag::after {
 }
 
 .contact h1 {
+    position: relative;
     font-size: 3.6rem;
     text-align: center;
     margin-bottom: 12rem
