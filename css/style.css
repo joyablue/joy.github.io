@@ -298,7 +298,8 @@ h2 {
 .container h1 {
     font-size: 3.6rem;
     text-align: center;
-    margin-bottom: 12rem
+    margin-bottom: 12rem;
+    z-index:9
 }
 
 .container h1::after {
@@ -562,10 +563,10 @@ span.it-bag::after {
 }
 
 .contact h1 {
-    position: relative;
     font-size: 3.6rem;
     text-align: center;
-    margin-bottom: 12rem
+    margin-bottom: 12rem;
+    z-index:9
 }
 
 .contact h1::after {
