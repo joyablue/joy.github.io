@@ -1,0 +1,632 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+html {
+    font-size: 10px;
+    overflow-x: hidden;
+    cursor: url(mouse.png), url(mouse.cur), auto
+}
+
+html {
+    scrollbar-3dLight-Color: #efefef;
+    scrollbar-arrow-color: #dfdfdf;
+    scrollbar-base-color: #efefef;
+    scrollbar-Face-Color: #dfdfdf;
+    scrollbar-Track-Color: #efefef;
+    scrollbar-DarkShadow-Color: #efefef;
+    scrollbar-Highlight-Color: #efefef;
+    scrollbar-Shadow-Color: #efefef;
+    -ms-overflow-style: none;
+    /* overflow: auto; */
+}
+
+/* SCROLL */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* 스크롤바의 width */
+::-webkit-scrollbar-track {
+    background-color: #ffeb58;
+}
+
+/* 스크롤바의 전체 배경색 */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #ffb400, #ffb400);
+}
+
+/* 스크롤바 색 */
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #000;
+    transition: 0.3s all;
+    cursor: url("../mouse.png"), url("../mouse.cur"), auto
+}
+
+h1,
+h2 {
+    font-family: 'Gotham', sans-serif;
+    color: #000;
+}
+
+
+
+/* 공통 */
+.section {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.clearfix::after {
+    content: '';
+    position: relative;
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
+.container {
+    position: relative;
+    max-width: 140rem;
+    margin: 0 auto;
+}
+
+/* header */
+
+.header {
+    position: fixed;
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    line-height: 80px;
+
+    z-index: 999;
+}
+
+.logo {
+    position: absolute;
+    left: 0;
+}
+
+.menu {
+    position: absolute;
+    right: 0;
+}
+
+
+.menu_bg {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    top: 0;
+    display: none;
+    z-index: 9;
+}
+
+.sidebar_menu {
+    position: absolute;
+    display: none;
+    width: 50%;
+    height: 100vh;
+    background: #000;
+    top: 0;
+    right: -50%;
+    z-index: 9;
+}
+
+.close_btn {
+    width: 25px;
+    height: 25px;
+    margin: 10px;
+}
+
+.close_btn a {
+    display: block;
+    width: 50px;
+    height: 50px;
+    top: 5%;
+    right: 5%;
+    position: absolute;
+}
+
+.close_btn a img {
+    display: block;
+}
+
+.menu_wrap {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    list-style: none;
+    padding-left: 10%;
+    z-index: 9;
+}
+
+.menu_wrap li {
+    line-height: 5.5rem;
+    margin-bottom: 3rem;
+}
+
+.menu_wrap li a {
+    font-family: 'Gotham', sans-serif;
+    font-size: 3.2rem;
+    color: rgba(255,255,255,0.2);
+    text-decoration: none;
+    transition: 0.9s all;
+}
+
+.menu_wrap li a:hover {
+    color: rgba(255,255,255,1);
+    font-weight: 700
+}
+
+.menu_wrap li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    width: 0;
+    height: 0.5rem;
+    background-color: #ffb400;
+    margin-top: 5rem;
+    transition: 1.2s all;
+}
+
+.menu_wrap li a:hover::after {
+    width:100%;
+    height: 0.5rem;;
+    background-color: #ffb400;
+}
+
+
+
+
+
+/* main */
+
+.main {
+    background: url("../images/main-bg.jpg") center;
+}
+
+.main h1 {
+    font-size: 0;
+}
+
+.main-banner {
+    position: relative;
+    padding-top: 13rem;
+}
+
+.main-banner img {
+    width: auto;
+    max-width: 100%;
+}
+
+.main-banner .left-wrap {
+    position: relative;
+    float: left;
+    width: 35%;
+    padding-top: 8%;
+}
+
+.text-img {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.text-img h2 {
+    font-size: 2.4rem;
+    line-height: 4.2;
+    letter-spacing: 0.25rem;
+}
+
+.more-ico img {
+    margin-top: 6rem;
+}
+
+.main-banner .right-wrap {
+    position: relative;
+    float: right;
+    width: 65%;
+    padding-left: 12%;
+    padding-bottom: 5%;
+}
+
+.main-pic {
+    float: right;
+}
+
+.heart-ico {
+    position: absolute;
+    right: 65%;
+    top: 10%;
+
+    animation: motion 0.8s linear 0s infinite alternate;
+    margin-top: 0;
+}
+
+@keyframes motion {
+    0% {
+        margin-top: 0;
+    }
+
+    100% {
+        margin-top: 1.5rem;
+    }
+}
+
+
+/* about */
+.about {
+    padding-top: 11rem;
+    padding-bottom: 11rem;
+    background: url("../images/about/about-bg.jpg") no-repeat center;
+    background-size: cover;
+
+}
+
+.container h1 {
+    font-size: 3.6rem;
+    text-align: center;
+    margin-bottom: 12rem
+}
+
+.container h1::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 3.5rem;
+    height: 0.3rem;
+    background-color: #000;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 7rem;
+}
+
+.about .container .left-wrap {
+    width: 47%;
+    float: left;
+}
+
+.pr-t {
+    position: relative;
+    height: 5rem;
+    line-height: 5rem;
+}
+
+.pic-ico {
+    float: left;
+}
+
+.pic-ico img {
+    width: 5rem;
+    height: 5rem;
+    margin-right: 1rem;
+}
+
+.pic-ico h2 {
+    display: inline-block;
+    font-size: 1.8rem;
+}
+
+.sns-ico {
+    float: right;
+}
+
+.sns-ico a {
+    margin-left: 2rem;
+}
+
+.left-pic {
+    position: relative;
+    width: 100%;
+    height: 48.5rem;
+    margin-top: 3rem;
+    background: url("../images/about/profile-main.jpg") no-repeat;
+    background-size: cover;
+    background-position-y: -5rem;
+    border-radius: 2.5rem 0 0 0;
+    border: 0.4rem solid #000;
+}
+
+
+.about .container .right-wrap {
+    width: 50%;
+    float: right;
+}
+
+.education {
+    position: relative;
+    width: 100%;
+    height: 22rem;
+    border: 0.4rem solid #000;
+    border-radius: 0 2.5rem 0 0;
+    padding: 2rem 0 2rem 5rem;
+    margin-top: 8rem;
+    background-color: #fff;
+}
+
+.education h2,
+.license h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+    font-weight: 700;
+}
+
+.education ul li,
+.license ul li {
+    font-size: 1.8rem;
+    letter-spacing: -0.08rem;
+    height: 3.5rem;
+}
+
+.education ul li span,
+.license ul li span {
+    display: inline-block;
+    font-family: 'Gotham', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    width: 7rem;
+}
+
+.license {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 15.5rem;
+    border: 0.4rem solid #000;
+    border-radius: 0 2.5rem 0 0;
+    padding: 2rem 0 2rem 5rem;
+    margin-top: 1rem;
+}
+
+.license ul li u {
+    color: #a3a3a3;
+    font-weight: 300;
+}
+
+.skill {
+    position: relative;
+    width: 100%;
+    margin-top: 1.9rem
+}
+
+.skill div {
+    width: 33%;
+    float: left;
+    text-align: center;
+    font-family: 'Gotham', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 3.3rem;
+    background: conic-gradient(from 
+    45deg, #ffd301, #fffca6);
+    border: 3px solid #000;
+    margin-bottom: 0.3rem;
+    margin-right: 0.3rem;
+}
+
+.skill div:nth-child(3),
+.skill div:nth-child(6) {
+    background: conic-gradient(from 
+    45deg, #a2894e, #c0af88);
+}
+
+.skill div:nth-child(5) {
+    background: conic-gradient(from 
+    45deg, #d5d5d5, #eceeee);
+}
+
+.skill div:nth-child(3n) {
+    margin-right: 0;
+}
+
+
+/* competency */
+
+.competency {
+    padding-top: 11rem;
+    padding-bottom: 11rem;
+    background-color: #f5f5f5;
+    z-index: 0;
+}
+
+.competency .left-wrap div {
+    position: relative;
+    width: 100%;
+    height: 16.3rem;
+    border-radius: 2.5rem 0 2.5rem 2.5rem;
+    border: 4px solid #000;
+    background-color: #fff;
+    margin-bottom: 1.5rem;
+    padding: 2rem;
+    overflow: hidden;
+    z-index: -1;
+}
+
+
+.competency .left-wrap div:last-child {
+    margin-bottom: 0;
+}
+
+.competency .container span {
+    font-size: 2.4rem;
+    font-weight: 500;
+    letter-spacing: -0.15rem;
+    margin-bottom: 3rem;
+}
+
+span.commu-bag::after,
+span.res-bag::after {
+    content: '';
+    position: absolute;
+    left: 3rem;
+    width: 16.8rem;
+    height: 1.8rem;
+    margin-top: 1.2rem;
+    background-color: #ffe958;
+    z-index: -1
+}
+
+span.it-bag::after {
+    content: '';
+    position: absolute;
+    left: 3rem;
+    width: 18.8rem;
+    height: 1.8rem;
+    margin-top: 1.2rem;
+    background-color: #ffe958;
+    z-index: -1
+}
+
+.competency .container p {
+    font-size: 1.8rem;
+    font-weight: 300;
+    letter-spacing: -0.1rem;
+    line-height: 2.7rem;
+    margin-top: 1rem;
+}
+
+.competency .container .left-wrap {
+    width: 50%;
+    float: left;
+}
+
+.competency .container .right-wrap {
+    position: relative;
+    width: 50%;
+    float: right;
+}
+
+.competency .container .right-wrap img {
+    position: absolute;
+    right: 0;
+    max-width: 100%;
+}
+
+/* joygram */
+
+.joygram {
+    padding-top: 11rem;
+    padding-bottom: 11rem;
+}
+
+.joygram h1 span {
+    color: #ffe958
+}
+
+.pic-grid div {
+    display: inline-block;
+    width: 24.5%;
+    height: 25rem;
+    background-color: #eee;
+    margin: -0.2rem;
+}
+
+.pic-grid div:nth-child(1) {
+    background:url("../images/joygram/joygram01.jpg") no-repeat center;
+}
+.pic-grid div:nth-child(2) {
+    background:url("../images/joygram/joygram02.jpg") no-repeat center;
+}
+.pic-grid div:nth-child(3) {
+    background:url("../images/joygram/joygram03.jpg") no-repeat center;
+}
+.pic-grid div:nth-child(4) {
+    background:url("../images/joygram/joygram04.jpg") no-repeat center;
+}
+.pic-grid div:nth-child(5) {
+    background:url("../images/joygram/joygram05.jpg") no-repeat center;
+}
+
+.pic-grid div:nth-child(6) {
+    background:url("../images/joygram/joygram06.jpg") no-repeat center;
+}
+
+.pic-grid div:nth-child(7) {
+    background:url("../images/joygram/joygram07.jpg") no-repeat center;
+}
+
+.pic-grid div:nth-child(8) {
+    background:url("../images/joygram/joygram08.jpg") no-repeat center;
+}
+
+
+
+/* contact */
+
+.contact {
+    position: relative;
+    padding-top: 11rem;
+    background-color: #ffd300;
+}
+
+.contact h1 {
+    font-size: 3.6rem;
+    text-align: center;
+    margin-bottom: 12rem
+}
+
+.contact h1::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 3.5rem;
+    height: 0.3rem;
+    background-color: #000;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 20rem;
+}
+
+.qr-code img {
+    max-width: 100%;
+}
+
+/* footer */
+
+.footer {
+    background-color: #000;
+    padding-top: 11rem;
+    padding-bottom: 11rem;
+}
+
+
+.footer p {
+    font-family: 'Gotham', sans-serif;
+    color: #fff;
+    font-size: 1.6rem;
+    text-align: center;
+    font-weight: 100;
+}
+
+.footer p span {
+    font-weight: 500;
+}
