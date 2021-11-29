@@ -163,7 +163,7 @@ span.it-bag::after { content: ''; position: absolute; left: 3rem; width: 18.8rem
 .pic-grid div { display: inline-block; width: 33%; height: 55rem; background-color: #eee; } 
 
 /* contact */
-.contact { background-color: #ffd300; }
+.contact { background-color: #ffd300; padding-bottom: 0;}
 .contact h3 {text-align: center;} 
 .contact h3 img {max-width: 100%;} 
 .qr-code img { max-width: 100%; } 
