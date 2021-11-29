@@ -45,7 +45,7 @@ h1, h2 { font-family: 'Gotham', sans-serif; color: #000; }
 .header { position: fixed; display: block; width: 100%; height: 8rem; line-height: 8rem; margin-top: 2rem; z-index: 999; } 
 
 .logo { position: absolute; left: 6.25%; } 
-.menu { position: absolute; right: 6.25%; } 
+.menu { position: absolute; right: 6.25%; text-align: center } 
 
 /* hamberger menu  */
 
@@ -186,12 +186,10 @@ span.it-bag::after { content: ''; position: absolute; left: 3rem; width: 18.8rem
    .competency .left-wrap div:last-child { height: 19rem } 
    }
 
-
-  
-  @media screen and (max-width: 1410px) { /* header & container */
+ @media screen and (max-width: 1410px) { /* header & container */
    .logo img { width: 80%; } 
    .menu img { width: 80%; } 
-  
+
    /* about */
    .left-pic { height: 45rem; background-size: 70rem; background-position: center; } 
    .about .container .left-wrap {width: 47.5%;}
@@ -206,7 +204,7 @@ span.it-bag::after { content: ''; position: absolute; left: 3rem; width: 18.8rem
    .skill {display: none}
    .skill-m {display: block}
    .skill-m div {margin-right: 0.23rem; width: 33.1%}
-  
+
    /* competency */
    .competency .container .left-wrap { width: 57%; } 
    .competency .left-wrap div:last-child { height: auto } 
@@ -217,31 +215,55 @@ span.it-bag::after { content: ''; position: absolute; left: 3rem; width: 18.8rem
    
    .competency .container .right-wrap { width: 43%; } 
    .competency .container .right-wrap img { top: 5rem; padding-left: 3rem; } 
-  
+
    /* joygram */
    .pic-grid div { width: 100%; height: 35rem } 
    }
 
-   @media screen and (max-width: 1023px){
-      .section { min-width: 768px; }
-      .text-img h2 { font-size: 1.8rem; letter-spacing: 0.03rem;}
-      /* about */
-      .about .container .left-wrap,
-      .about .container .right-wrap { float: none; width: 100%; } 
-     
-      .left-pic { height: 50rem; background-size: 98rem; background-position: 0 -13rem; } 
-     
-      .education { margin-top: 1rem; border-radius: 0; margin-bottom: 1rem; height: auto;} 
-      .license { border-radius: 0 0 2.5rem 0; margin-bottom: 1rem;  height: auto;} 
-      .education h2, .license h2 { font-size: 2.1rem; } 
-     
-      .skill-m { margin-top: 0; } 
-      .skill-m div { line-height: 4.3rem; } 
-      .competency .container .right-wrap { display: none; } 
-      .competency .container .left-wrap { width: 100%; float:none; } 
-      .competency .left-wrap div { width: 100%; margin: 0 auto; margin-bottom: 1.5rem } 
-     
-      .competency .container span { font-size:2.4rem; } 
-      .competency .container p { font-size: 1.8rem; } 
-      }
+@media screen and (max-width: 1023px){
+   .section { min-width: 768px; }
+   .text-img h2 { font-size: 1.8rem; letter-spacing: 0.03rem;}
+   /* about */
+   .about .container .left-wrap,
+   .about .container .right-wrap { float: none; width: 100%; } 
 
+   .left-pic { height: 50rem; background-size: 98rem; background-position: 0 -13rem; } 
+
+   .education { margin-top: 1rem; border-radius: 0; margin-bottom: 1rem; height: auto;} 
+   .license { border-radius: 0 0 2.5rem 0; margin-bottom: 1rem;  height: auto;} 
+   .education h2, .license h2 { font-size: 2.1rem; } 
+
+   .skill-m { margin-top: 0; } 
+   .skill-m div { line-height: 4.3rem; } 
+   
+   .competency .container .right-wrap { display: none; } 
+   .competency .container .left-wrap { width: 100%; float:none; } 
+   .competency .left-wrap div { width: 100%; margin: 0 auto; margin-bottom: 1.5rem } 
+   
+   .competency .container span { font-size:2.4rem; } 
+   .competency .container p { font-size: 1.8rem; } 
+   }
+
+@media screen and (max-width: 767px){
+   .header { margin-top: 0rem; }
+
+   .logo img { width: 70%; } 
+   .menu img { width: 65%; } 
+   
+   .section { min-width: 480px; }
+   .main {padding-top: 10%; padding-bottom: 35%;}
+   .main-banner {padding-top: 0;}
+   .main-banner .left-wrap {width: 100%; padding-top: 0; float: none; z-index: 1;}
+   .main-banner .right-wrap {position: absolute; top: 50%; left: 20%; width: 100%; float: none; padding-left: 0; opacity: 0.7;}
+   .main-banner img { max-width: 80% }
+   .text-img h2 { font-size: 2.4rem; letter-spacing: 0.25rem; }
+
+   .container h3 img {max-width: 50%}
+
+   .left-pic { background-size: auto; background-position: center}
+
+   .education h2, .license h2 { font-size: 2.4rem }
+   .education ul li, .license ul li { font-size: 1.8rem; }
+
+   .skill-m div { width: 49.5%; margin-right: 0.2rem !important;}
+}   
