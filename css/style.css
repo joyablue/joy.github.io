@@ -169,7 +169,7 @@ span.it-bag::after { content: ''; position: absolute; left: 3rem; width: 18.8rem
 .qr-code img { max-width: 100%; } 
 
 /* footer */
-.footer { background-color: #000; padding-top: 11rem; padding-bottom: 11rem; } 
+.footer {position: relative; width: 100%; background-color: #000; padding-top: 11rem; padding-bottom: 11rem; } 
 .footer p { font-family: 'Gotham', sans-serif; color: #fff; font-size: 1.6rem; text-align: center; font-weight: 100; } 
 .footer p span { font-weight: 500; } 
 
