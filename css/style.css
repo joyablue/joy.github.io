@@ -40,7 +40,7 @@ h1, h2 { font-family: 'MADE TOMMY', sans-serif; color: #000; }
 
 .clearfix::after { content: ''; position: relative; display: block; width: 100%; clear: both; } 
 
-.container { position: relative; width: 85%; margin: 0 auto; } 
+.container { position: relative; width: 73.2%; margin: 0 auto; } 
 .container h3 {text-align: center; padding-bottom: 6%}
 .container h3 img {max-width: 100%;}
 
@@ -109,22 +109,22 @@ h1, h2 { font-family: 'MADE TOMMY', sans-serif; color: #000; }
 .sns-ico { float: right; } 
 .sns-ico a { margin-left: 2rem; } 
 
-.left-pic { position: relative; width: 100%; height: 48.5rem; margin-top: 3rem; background: url("../images/about/profile-main.jpg") no-repeat; background-size: cover; background-position-y: -5rem; border-radius: 2.5rem 0 0 0; border: 0.4rem solid #000; } 
+.left-pic { position: relative; width: 100%; height: 48rem; margin-top: 3rem; background: url("../images/about/profile-main.jpg") no-repeat; background-size: cover; background-position-y: -5rem; border-radius: 2.5rem 0 0 0; border: 0.4rem solid #000; } 
 
-.education { position: relative; width: 100%; height: 22rem; border: 0.4rem solid #000; border-radius: 0 2.5rem 0 0; padding: 2rem 5rem; margin-top: 8rem; background-color: #fff; } 
+.education { position: relative; width: 100%; border: 0.4rem solid #000; border-radius: 0 2.5rem 0 0; padding: 2rem 4rem; margin-top: 8rem; background-color: #fff; } 
 
 .education h2,
 .license h2 { font-size: 1.8rem; margin-bottom: 2.5rem; font-weight: 700; } 
-.education ul li,
-.license ul li { font-size: 1.8rem; letter-spacing: -0.08rem; margin-bottom:1.5rem; } 
+.education ul li, .license ul li { font-size: 1.8rem; letter-spacing: -0.08rem; margin-bottom:1.5rem; } 
+.education ul li:last-child, .license ul li:last-child {margin-bottom: 0;}
 .education ul li span,
 .license ul li span { display: inline-block; font-family: 'MADE TOMMY', sans-serif; font-size: 1.8rem; font-weight: 500; width: 7rem; } 
 
-.license { position: relative; display: block; width: 100%; height: 15.5rem; border: 0.4rem solid #000; border-radius: 0 2.5rem 0 0; padding: 2rem 0 2rem 5rem; margin-top: 1rem; } 
+.license { position: relative; display: block; width: 100%; border: 0.4rem solid #000; border-radius: 0 2.5rem 0 0; padding: 2rem 0 2rem 5rem; margin-top: 1rem; } 
 .license ul li u { color: #a3a3a3; font-weight: 300; } 
 
-.skill { position: relative; width: 100%; margin-top: 1.9rem}
-.skill div { width: 33%; float: left; text-align: center; font-family: 'MADE TOMMY', sans-serif; font-size: 1.6rem; font-weight: 500; line-height: 3.3rem; background: conic-gradient(from 
+.skill { position: relative; width: 100%; margin-top: 1rem}
+.skill div { width: 33%; float: left; text-align: center; font-family: 'MADE TOMMY', sans-serif; font-size: 1.6rem; font-weight: 500; line-height: 3.4rem; background: conic-gradient(from 
  45deg, #ffd301, #fffca6); border: 3px solid #000; margin-bottom: 0.3rem; margin-right: 0.3rem; } 
 .skill div:nth-child(3),
 .skill div:nth-child(6) { background: conic-gradient(from 
@@ -152,7 +152,7 @@ h1, h2 { font-family: 'MADE TOMMY', sans-serif; color: #000; }
 .competency .container .left-wrap { width: 50%; float: left; } 
 .competency .left-wrap div:last-child { margin-bottom: 0; } 
 .competency .container .right-wrap { position: relative; width: 50%; float: right; } 
-.competency .container .right-wrap img { position: absolute; right: 0; max-width: 100%; } 
+.competency .container .right-wrap img { position: absolute; left: 12%; max-width: 100%; } 
 .competency .container span { font-size: 2.4rem; font-weight: 500; letter-spacing: -0.15rem; margin-bottom: 3rem; } 
 .competency .container p { font-size: 1.8rem; font-weight: 300; letter-spacing: -0.1rem; line-height: 2.7rem; margin-top: 1rem; } 
 
@@ -162,37 +162,89 @@ span.it-bag::after { content: ''; position: absolute; left: 3rem; width: 18.8rem
 
 /* publishing */
 
-.pb-slide {position: relative; width: 100%; display: block;}
+.pb-slide {position: relative; width: 100%; min-width: 169rem; display: block;}
 
-.banner-img { position: relative; float: left; width: 81rem; height: 50rem; border-radius: 2.5rem 0 0 0; border: 5px solid #000 }
-.banner-img-1 {background: url('../images/publishing/pb01.jpg') no-repeat center; background-size: cover;}
-.banner-img-2 {background: url('../images/publishing/pb02.jpg') no-repeat center; background-size: cover;}
-.banner-img-3 {background: url('../images/publishing/pb03.jpg') no-repeat center; background-size: cover;}
+.pb-slide .banner-img { position: relative; float: left; width: 81rem; height: 50rem; border-radius: 2.5rem 0 0 0; border: 5px solid #000 }
+.pb-slide .banner-img-1 {background: url('../images/publishing/pb01.jpg') no-repeat center; background-size: cover;}
+.pb-slide .banner-img-2 {background: url('../images/publishing/pb02.jpg') no-repeat center; background-size: cover;}
+.pb-slide .banner-img-3 {background: url('../images/publishing/pb03.jpg') no-repeat center; background-size: cover;}
+.pb-slide .banner-img-4 {background: url('../images/publishing/pb04.jpg') no-repeat center; background-size: cover;}
+.pb-slide .banner-img-5 {background: url('../images/publishing/pb05.jpg') no-repeat center; background-size: cover;}
+.pb-slide .banner-img-6 {background: url('../images/publishing/pb06.jpg') no-repeat center; background-size: cover;}
+.pb-slide .banner-img-7 {background: url('../images/publishing/pb07.jpg') no-repeat center; background-size: cover;}
 
-.banner-box { position: relative; float: left; width: 45rem; height: 32rem; line-height: 1.2; letter-spacing: -0.10rem; margin-left: 8rem; margin-top: 3.5rem;}
+.pb-slide .banner-box { position: relative; float: left; width: 50rem; height: 32rem; line-height: 1.2; letter-spacing: -0.10rem; margin-left: 9rem; margin-top: 3.5rem;}
 
-.sw-control {position: absolute; display: block; right: 0; top: 0; z-index: 1;}
-.sw-control li {float:left; cursor: pointer; width: 5rem; height: 5rem; margin-right: 0.2rem;}
+
+/* swiper-control */
+.pb-slide .sw-control {position: absolute; display: block; right: 18%; top: 17%; z-index: 1;}
+.sw-control li {float:left; cursor: pointer; width: 4rem; height: 4rem; margin-right: 0.2rem;}
 .sw-prev-btn {background: url('../images/icon/prev.jpg') no-repeat center; background-size: cover}
 .sw-next-btn {background: url('../images/icon/next.jpg') no-repeat center; background-size: cover}
 
 .box-title { display: block; width: 100%; height: 100%; margin-top: 3rem;}
 .box-title > p { font-size: 3.6rem; font-weight: 500; }
-.box-title > p > span { font-family: 'MADE TOMMY', sans-serif; font-size: 1.8rem; letter-spacing: 0}
+.box-title > p > span { font-family: 'MADE TOMMY', sans-serif; font-size: 1.8rem; font-weight: 400; letter-spacing: 0}
 
 .particle { font-size: 1.6rem; color: #606060; font-weight: 300;}
 
 .box-content { margin-top: 4.5rem;  font-size: 1.8rem; }
-.box-content > p { font-family: 'MADE TOMMY', sans-serif; letter-spacing: 0;  line-height: 1.5; }
+.box-content > p { font-family: 'MADE TOMMY', sans-serif; letter-spacing: 0; line-height: 1.5; }
 .box-content > p > span { font-family: 'Noto Sans KR', sans-serif; letter-spacing: -0.1rem; font-weight: 300;}
 
-.box-btn { position: relative; margin-top: 5rem;}
-.box-btn a { display: inline-block; padding: 2rem 4.5rem; color: #000; font-family: 'MADE TOMMY', sans-serif; letter-spacing: 0.1rem; font-size: 1.6rem; font-weight: 400; border: 3px solid #000; }
-a.box-btn-1 { background: #1684e6; color: #fff; }
-a.box-btn-2 { background: #b2aaa3; }
-a.box-btn-3 { background: conic-gradient(from 45deg, #ffd301, #fffca6); margin-right: 0.2rem;}
+.box-btn { position: relative; }
+.box-btn a { margin-top: 5rem; display: inline-block; padding: 2rem 4.5rem; color: #000; font-family: 'MADE TOMMY', sans-serif; letter-spacing: 0.1rem; font-size: 1.6rem; font-weight: 400; border: 3px solid #000; }
+.pb-slide a.box-btn-1 { background: #1684e6; color: #fff; }
+.pb-slide a.box-btn-2 { background: #b2aaa3; }
+.pb-slide a.box-btn-3 { background: conic-gradient(from 45deg, #ffd301, #fffca6); margin-right: 0.2rem;}
 
 
+/* design */
+.design { background: url('../images/design-bg.jpg') no-repeat center; background-size: cover; }
+.dg-slide {position: relative; width: 100%; min-width: 169rem; display: block;}
+.sw-visual-2 {height: 50rem; overflow: hidden;}
+.dg-slide .banner-img { position: relative; float: left; width: 81rem; height: 50rem; margin-left: 35%; border-radius: 0 2.5rem 0 0; border: 5px solid #000 }
+.dg-slide .banner-img-1 {background: url('../images/design/dg01.jpg') no-repeat center; background-size: cover;}
+
+.dg-slide .banner-box { position: relative; float: left; width: 50rem; height: 32rem; line-height: 1.2; letter-spacing: -0.10rem; margin-top: 3.5rem;}
+
+/* swiper-control */
+.dg-slide .sw-control {position: absolute; display: block; left: 24.5%; top: 17%; z-index: 1;}
+.dg-slide .sw-control .sw-prev-btn,
+.dg-slide .sw-control .sw-next-btn { transform: rotate(90deg); }
+.dg-slide a.box-btn-1 { background: #9000ff; color: #fff; }
+
+/* experience */
+.ep-wrapper { position: relative; width: 100%; margin: 0 auto }
+.ep-content { position: relative; width: 100%; margin: 0 auto; overflow: hidden; }
+.ep-left-wrap { float: left; width: 61.5rem; height: 31rem; border: 5px solid #000;}
+.ep-left-text { float: left; width: 78.5rem; padding: 4.5rem 9rem}
+.ep-right-wrap { float: right; width: 78.5rem; height: 33rem; border: 5px solid #000;}
+.ep-right-text { float: left; width: 61.5rem; padding: 6.2rem 9rem}
+.ep-right-text-2 { height: 42.5rem; }
+
+.ep-left-wrap-1 {background: url('../images/experience/ep01-g.jpg') no-repeat center; background-size: cover;}
+.ep-content:hover .ep-left-wrap-1 {background: url('../images/experience/ep01.jpg') no-repeat center; background-size: cover;}
+.ep-left-wrap-2 {background: url('../images/experience/ep03-g.jpg') no-repeat center; background-size: cover;}
+.ep-content:hover .ep-left-wrap-2 {background: url('../images/experience/ep03.jpg') no-repeat center; background-size: cover;}
+.ep-right-wrap-1 {background: url('../images/experience/ep02-g.jpg') no-repeat center; background-size: cover;}
+.ep-content:hover .ep-right-wrap-1 {background: url('../images/experience/ep02.jpg') no-repeat center; background-size: cover;}
+.ep-right-wrap-2 {height: 42.5rem; background: url('../images/experience/ep04-g.jpg') no-repeat center; background-size: cover;}
+.ep-content:hover .ep-right-wrap-2 {height: 42.5rem; background: url('../images/experience/ep04.jpg') no-repeat center; background-size: cover;}
+
+.ep-title { font-family: 'MADE TOMMY', sans-serif; }
+.ep-title span {font-weight: 300; font-size: 1.8rem;}
+.ep-title p {font-weight: 500; font-size: 2.4rem;}
+
+.ep-text { font-family: 'Noto Sans KR', sans-serif; letter-spacing: -0.08rem; font-size: 1.8rem; opacity: 0.8; margin-top: 4rem;}
+.ep-text p {font-weight: 400; margin-bottom: 2rem;}
+.ep-text span { font-weight: 300; line-height: 1.4;}
+.ep-text-2 span { display: block; margin-bottom: 2rem}
+.ep-text p::after {content: ''; position: absolute; left: 10rem; width: 0rem; height: 1.5rem; margin-top: 1.2rem; background-color: #ffe958; z-index: -1; transition: width 0.6s;}
+.ep-content:hover .ep-text p::after {content: ''; position: absolute; left: 10rem; width: 28rem; height: 1.5rem; margin-top: 1.2rem; background-color: #ffe958; z-index: -1}
+.ep-content:nth-child(2):hover .ep-text p::after {content: ''; position: absolute; left: 10rem; width: 12rem; height: 1.5rem; margin-top: 1.2rem; background-color: #ffe958; z-index: -1}
+.ep-content:nth-child(3):hover .ep-text p::after {content: ''; position: absolute; left: 10rem; width: 12rem; height: 1.5rem; margin-top: 1.2rem; background-color: #ffe958; z-index: -1}
+.ep-content:nth-child(4):hover .ep-text p::after {content: ''; position: absolute; left: 10rem; width: 20.5rem; height: 1.5rem; margin-top: 1.2rem; background-color: #ffe958; z-index: -1}
 
 
 /* joygram */
