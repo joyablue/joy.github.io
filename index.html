@@ -11,6 +11,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/font.css">
+  <link rel="stylesheet" href="js/swiper/swiper.min.css">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/jquery.min.js"></script>
   <!--[if lt IE 9]>
@@ -21,6 +22,7 @@
   <script src="js/prefixfree.min.js"></script>
   <script src="js/respond.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/swiper/swiper.min.js"></script>
   <script src="js/script.js"></script>
 </head>
 
@@ -44,6 +46,7 @@
       </ul>
     </div>
   </header>
+  <!-- wrap -->
   <div class="wrap">
     <section id="main" class="section main">
       <h1>이현정 포트폴리오</h1>
@@ -53,7 +56,7 @@
             <div class="text-img">
               <h2>2022 WEB PORTFOLIO</h2>
               <img src="images/text/main_txt_01.png" alt="hyeonjeong">
-              <a href="#" class="more-ico"><img src="images/icon/plus.png" alt="more"></a>
+              <a href="#" class="more-ico"><img src="images/icon/plus.png" alt="more" target="_blank"></a>
             </div>
           </div>
           <div class="right-wrap">
@@ -74,10 +77,10 @@
               <h2>WHO AM I</h2>
             </div>
             <div class="sns-ico">
-              <a href="#work"><img src="images/icon/like.png" alt="like"></a>
-              <a href="https://github.com/joyablue"><img src="images/icon/git.png" alt="git"></a>
-              <a href="#joygram"><img src="images/icon/insta.png" alt="instagram"></a>
-              <a href="https://open.kakao.com/o/sL8xksJd"><img src="images/icon/talk.png" alt="talk"></a>
+              <a href="#work"><img src="images/icon/like.png" alt="like" target="_blank"></a>
+              <a href="https://github.com/joyablue"><img src="images/icon/git.png" alt="git" target="_blank"></a>
+              <a href="#joygram"><img src="images/icon/insta.png" alt="instagram" target="_blank"></a>
+              <a href="https://open.kakao.com/o/sL8xksJd"><img src="images/icon/talk.png" alt="talk" target="_blank"></a>
             </div>
           </div>
           <div class="left-pic"></div>
@@ -112,12 +115,13 @@
           <div>Adobe Photoshop</div>
           <div>Adobe Illustrator</div>
           <div>Adobe XD</div>
-          <div>HTML5 & CSS3</div>
+          <div>HTML5 &amp; CSS3</div>
           <div>JavaScript/jQuery</div>
           <div>SCSS</div>
         </div>
       </div> <!-- container end -->
     </section> <!-- about end -->
+    <!-- competency -->
     <section id="competency" class="section competency">
       <div class="container clearfix">
         <h1>COMPETENCY</h1>
@@ -145,8 +149,94 @@
         <div class="right-wrap" data-aos="fade-left" data-aos-delay="900">
           <img src="images/competency/graphy.png" alt="competency">
         </div>
-      </div>
+      </div><!-- container end -->
     </section>
+    <!-- publishing -->
+    <section id="publishing" class="section publishing">
+      <div class="container">
+        <h1>work</h1>
+        <h3><img src="images/text/publishing.png" alt="title"></h3>
+        <div class="pb-slide" data-aos="fade-up">
+          <div class="swiper-container sw-visual">
+            <div class="swiper-wrapper">
+              <!-- swiper-slide -->
+              <div class="swiper-slide clearfix">
+                <div class="banner-img banner-img-1"></div>
+                <div class="banner-box">
+                  <div class="box-title">
+                    <span class="particle">실무 프로젝트</span>
+                    <p>괴정 파밀리에<span> / 2020.08</span></p>
+                    <div class="box-content">
+                      <p>PERIOD. <span>2days</span></p>
+                      <p>DESIGN/PUBLISHING. <span>100%</span></p>
+                      <p>OVERVIEW. <span>실무에서 그누보드를 이용하여 아파트 분양 홍보 랜딩페이지를 직접 디자인 및 퍼블리싱하였습니다. (현재 운영 중)</span></p>
+                    </div>
+                    <div class="box-btn">
+                      <a class="box-btn-1" href="http://gj-familie.co.kr/">VIEW PROJECT</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide clearfix">
+                <div class="banner-img banner-img-2"></div>
+                <div class="banner-box">
+                  <div class="box-title">
+                    <span class="particle">실무 프로젝트</span>
+                    <p>문성두 외과의원<span> / 2021.01</span></p>
+                    <div class="box-content">
+                      <p>PERIOD. <span>1day</span></p>
+                      <p>PUBLISHING. <span>100%</span></p>
+                      <p>OVERVIEW. <span>실무에서 그누보드를 이용하여 병원 랜딩페이지를 직접 퍼블리싱하였습니다. (현재 운영 중)</span></p>
+                    </div>
+                    <div class="box-btn">
+                      <a class="box-btn-2" href="http://www.msdclinic.co.kr/" target="_blank">VIEW PROJECT</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide clearfix">
+                <div class="banner-img banner-img-3"></div>
+                <div class="banner-box">
+                  <div class="box-title">
+                    <span class="particle">개인 클론 코딩</span>
+                    <p>시디즈 웹사이트<span> / 2021.09</span></p>
+                    <div class="box-content">
+                      <p>PERIOD. <span>2021.09.22 (1day)</span></p>
+                      <p>PUBLISHING. <span>100%</span></p>
+                      <p>OVERVIEW. <span>운영 중인 웹사이트 디자인을 토대로 코딩 연습을 해 보았습니다.</span></p>
+                    </div>
+                    <div class="box-btn">
+                      <a class="box-btn-3" href="https://joyablue.github.io/sidiz/" target="_blank">PUBLISHING</a>
+                      <a class="box-btn" href="https://www.sidiz.com/" target="_blank">ORIGINAL SITE</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- swiper-slide end -->
+            </div>
+            <ul class="sw-control clearfix">
+              <li class="sw-prev-btn"></li>
+              <li class="sw-next-btn"></li>
+            </ul>
+          </div><!-- swiper-container end-->
+        </div>
+      </div><!-- container end -->
+    </section>
+    <!-- design -->
+    <section id="design" class="section design">
+      <div class="container">
+        <h1>work</h1>
+        <h3><img src="images/text/design.png" alt="title"></h3>
+      </div><!-- container end -->
+    </section>
+    <!-- experience -->
+    <section id="experience" class="section experience">
+      <div class="container">
+        <h1>work</h1>
+        <h3><img src="images/text/experience.png" alt="title"></h3>
+      </div><!-- container end -->
+    </section>
+    <!-- joygram -->
     <section id="joygram" class="section joygram">
       <div class="container">
         <h1>joygram</h1>

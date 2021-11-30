@@ -1,4 +1,8 @@
 @charset "utf-8";
+@import url('http://fonts.cdnfonts.com/css/made-tommy-outline');
+
+
+
 * { margin: 0; padding: 0; box-sizing: border-box; } 
 
 a { color: #000; text-decoration: none; } 
@@ -26,7 +30,7 @@ html { scrollbar-3dLight-Color: #efefef; scrollbar-arrow-color: #dfdfdf; scrollb
 
 body { font-family: 'Noto Sans KR', sans-serif; color: #000; transition: 0.3s all; cursor: url("../mouse.png"), url("../mouse.cur"), auto}
 
-h1, h2 { font-family: 'Gotham', sans-serif; color: #000; } 
+h1, h2 { font-family: 'MADE TOMMY', sans-serif; color: #000; } 
 
 
 
@@ -42,7 +46,7 @@ h1, h2 { font-family: 'Gotham', sans-serif; color: #000; }
 
 /* header */
 
-.header { position: fixed; display: block; width: 100%; height: 8rem; line-height: 8rem; margin-top: 2rem; z-index: 999; } 
+.header { position: fixed; display: block; width: 100%; height: 8rem; line-height: 8rem; z-index: 999; } 
 
 .logo { position: absolute; left: 6.25%; } 
 .menu { position: absolute; right: 6.25%; text-align: center } 
@@ -59,8 +63,8 @@ h1, h2 { font-family: 'Gotham', sans-serif; color: #000; }
 
 .menu_wrap { position: absolute; top: 50%; transform: translate(0, -50%); list-style: none; padding-left: 10%; z-index: 9; } 
 .menu_wrap li { line-height: 5.5rem; margin-bottom: 3rem; } 
-.menu_wrap li a { font-family: 'Gotham', sans-serif; font-size: 3.2rem; color: rgba(255,255,255,0.2); text-decoration: none; transition: 0.9s all; } 
-.menu_wrap li a:hover { color: rgba(255,255,255,1); font-weight: 700}
+.menu_wrap li a { font-family: 'MADE TOMMY', sans-serif; font-size: 3.2rem; color: rgba(255,255,255,0.2); text-decoration: none; transition: 0.9s all; } 
+.menu_wrap li a:hover { color: rgba(255,255,255,1); font-weight: 500}
 .menu_wrap li a::after { content: ""; position: absolute; left: 0; display: inline-block; width: 0; height: 0.5rem; background-color: #ffb400; margin-top: 5rem; transition: 1.2s all; } 
 .menu_wrap li a:hover::after { width:100%; height: 0.5rem;; background-color: #ffb400; } 
 
@@ -114,13 +118,13 @@ h1, h2 { font-family: 'Gotham', sans-serif; color: #000; }
 .education ul li,
 .license ul li { font-size: 1.8rem; letter-spacing: -0.08rem; margin-bottom:1.5rem; } 
 .education ul li span,
-.license ul li span { display: inline-block; font-family: 'Gotham', sans-serif; font-size: 1.8rem; font-weight: 500; width: 7rem; } 
+.license ul li span { display: inline-block; font-family: 'MADE TOMMY', sans-serif; font-size: 1.8rem; font-weight: 500; width: 7rem; } 
 
 .license { position: relative; display: block; width: 100%; height: 15.5rem; border: 0.4rem solid #000; border-radius: 0 2.5rem 0 0; padding: 2rem 0 2rem 5rem; margin-top: 1rem; } 
 .license ul li u { color: #a3a3a3; font-weight: 300; } 
 
 .skill { position: relative; width: 100%; margin-top: 1.9rem}
-.skill div { width: 33%; float: left; text-align: center; font-family: 'Gotham', sans-serif; font-size: 1.6rem; font-weight: 500; line-height: 3.3rem; background: conic-gradient(from 
+.skill div { width: 33%; float: left; text-align: center; font-family: 'MADE TOMMY', sans-serif; font-size: 1.6rem; font-weight: 500; line-height: 3.3rem; background: conic-gradient(from 
  45deg, #ffd301, #fffca6); border: 3px solid #000; margin-bottom: 0.3rem; margin-right: 0.3rem; } 
 .skill div:nth-child(3),
 .skill div:nth-child(6) { background: conic-gradient(from 
@@ -131,7 +135,7 @@ h1, h2 { font-family: 'Gotham', sans-serif; color: #000; }
 
 .skill-m {display: none;}
 .skill-m { position: relative; width: 100%; margin-top: 4rem}
-.skill-m div { width: 33.2%; float: left; text-align: center; font-family: 'Gotham', sans-serif; font-size: 1.6rem; font-weight: 500; line-height: 3.3rem; background: conic-gradient(from 
+.skill-m div { width: 33.2%; float: left; text-align: center; font-family: 'MADE TOMMY', sans-serif; font-size: 1.6rem; font-weight: 500; line-height: 3.3rem; background: conic-gradient(from 
  45deg, #ffd301, #fffca6); border: 3px solid #000; margin-bottom: 0.3rem; margin-right: 0.23rem; }
 .skill-m div:nth-child(3),
 .skill-m div:nth-child(6) { background: conic-gradient(from 
@@ -156,6 +160,41 @@ span.commu-bag::after,
 span.res-bag::after { content: ''; position: absolute; left: 3rem; width: 16.8rem; height: 1.8rem; margin-top: 1.2rem; background-color: #ffe958; z-index: -1}
 span.it-bag::after { content: ''; position: absolute; left: 3rem; width: 18.8rem; height: 1.8rem; margin-top: 1.2rem; background-color: #ffe958; z-index: -1}
 
+/* publishing */
+
+.pb-slide {position: relative; width: 100%; display: block;}
+
+.banner-img { position: relative; float: left; width: 81rem; height: 50rem; border-radius: 2.5rem 0 0 0; border: 5px solid #000 }
+.banner-img-1 {background: url('../images/publishing/pb01.jpg') no-repeat center; background-size: cover;}
+.banner-img-2 {background: url('../images/publishing/pb02.jpg') no-repeat center; background-size: cover;}
+.banner-img-3 {background: url('../images/publishing/pb03.jpg') no-repeat center; background-size: cover;}
+
+.banner-box { position: relative; float: left; width: 45rem; height: 32rem; line-height: 1.2; letter-spacing: -0.10rem; margin-left: 8rem; margin-top: 3.5rem;}
+
+.sw-control {position: absolute; display: block; right: 0; top: 0; z-index: 1;}
+.sw-control li {float:left; cursor: pointer; width: 5rem; height: 5rem; margin-right: 0.2rem;}
+.sw-prev-btn {background: url('../images/icon/prev.jpg') no-repeat center; background-size: cover}
+.sw-next-btn {background: url('../images/icon/next.jpg') no-repeat center; background-size: cover}
+
+.box-title { display: block; width: 100%; height: 100%; margin-top: 3rem;}
+.box-title > p { font-size: 3.6rem; font-weight: 500; }
+.box-title > p > span { font-family: 'MADE TOMMY', sans-serif; font-size: 1.8rem; letter-spacing: 0}
+
+.particle { font-size: 1.6rem; color: #606060; font-weight: 300;}
+
+.box-content { margin-top: 4.5rem;  font-size: 1.8rem; }
+.box-content > p { font-family: 'MADE TOMMY', sans-serif; letter-spacing: 0;  line-height: 1.5; }
+.box-content > p > span { font-family: 'Noto Sans KR', sans-serif; letter-spacing: -0.1rem; font-weight: 300;}
+
+.box-btn { position: relative; margin-top: 5rem;}
+.box-btn a { display: inline-block; padding: 2rem 4.5rem; color: #000; font-family: 'MADE TOMMY', sans-serif; letter-spacing: 0.1rem; font-size: 1.6rem; font-weight: 400; border: 3px solid #000; }
+a.box-btn-1 { background: #1684e6; color: #fff; }
+a.box-btn-2 { background: #b2aaa3; }
+a.box-btn-3 { background: conic-gradient(from 45deg, #ffd301, #fffca6); margin-right: 0.2rem;}
+
+
+
+
 /* joygram */
 
 .joygram h1 span { color: #ffe958}
@@ -171,7 +210,7 @@ span.it-bag::after { content: ''; position: absolute; left: 3rem; width: 18.8rem
 /* footer */
 .footer {position: relative; width: 100%; background-color: #000; padding-top: 11rem; padding-bottom: 11rem; } 
 .footer .container {width:100% !important}
-.footer p { font-family: 'Gotham', sans-serif; color: #fff; font-size: 1.6rem; text-align: center; font-weight: 100; } 
+.footer p { font-family: 'MADE TOMMY', sans-serif; color: #fff; font-size: 1.6rem; text-align: center; font-weight: 100; } 
 .footer p span { font-weight: 500; } 
 
 
