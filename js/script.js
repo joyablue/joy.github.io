@@ -1,12 +1,10 @@
-
-
 $(document).ready(function () {
     $('.menu').on('click', function (e) {
-        e.preventDefault();
         $('.menu_bg').show();
         $('.sidebar_menu').show().animate({
             right: 0
         });
+        e.preventDefault();
     });
     $('.close_btn>a').on('click', function (e) {
         e.preventDefault();
@@ -19,29 +17,29 @@ $(document).ready(function () {
     });
 
     // visual swiper
-	new Swiper('.sw-visual', {
+    new Swiper('.sw-visual', {
         loop: true,
-		speed: 3000,
-		allowTouchMove: false,
-		// effect: 'fade',
-		// fadeEffect: {
-		// 	crossFade: true,
-		// },
-		autoplay: {
-			delay: 3000,
-			disableOnInteraction: false,
-		},
-		navigation: {
-			prevEl: '.sw-prev-btn',
-			nextEl: '.sw-next-btn',
-		}        
-	});
+        speed: 3000,
+        allowTouchMove: false,
+        // effect: 'fade',
+        // fadeEffect: {
+        // 	crossFade: true,
+        // },
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            prevEl: '.sw-prev-btn',
+            nextEl: '.sw-next-btn',
+        }
+    });
 
     new Swiper('.sw-visual-2', {
-        direction: "vertical",
-		speed: 3000,
-		allowTouchMove: true,
-		// effect: 'coverflow',
+        direction: "horizontal",
+        speed: 3000,
+        allowTouchMove: true,
+        // effect: 'coverflow',
         // coverflowEffect: {
         //     rotate: 30,
         //     stretch: 50,
@@ -51,15 +49,40 @@ $(document).ready(function () {
         // },
         loop: true,
         slidesPerView: 'auto',
-		autoplay: {
-			delay: 3000,
-			disableOnInteraction: false,
-		},
-		navigation: {
-			prevEl: '.sw-prev-btn',
-			nextEl: '.sw-next-btn',
-		}
-	});
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            prevEl: '.sw-prev-btn',
+            nextEl: '.sw-next-btn',
+        },
+        breakpoints: { // 화면의 넓이가 1410px 이상일 때
+            1410: {
+                direction: "vertical",
+                speed: 3000,
+                allowTouchMove: true,
+                // effect: 'coverflow',
+                // coverflowEffect: {
+                //     rotate: 30,
+                //     stretch: 50,
+                //     depth: 50,
+                //     modifier: 1.5,
+                //     slideShadows : false,
+                // },
+                loop: true,
+                slidesPerView: 'auto',
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                navigation: {
+                    prevEl: '.sw-prev-btn',
+                    nextEl: '.sw-next-btn',
+                },
+            },
+        }
+    });
 });
 
 window.addEventListener('load', function (e) {
