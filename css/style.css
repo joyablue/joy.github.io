@@ -177,7 +177,7 @@ span.it-bag::after { content: ''; position: absolute; left: 3rem; width: 18.8rem
 
 
 /* swiper-control */
-.pb-slide .sw-control {position: absolute; display: block; left: 68%; top: 17%; z-index: 1;}
+.pb-slide .sw-control {position: absolute; display: block; right: 0; top: 17%; z-index: 1;}
 .sw-control li {float:left; cursor: pointer; width: 4rem; height: 4rem; margin-right: 0.2rem;}
 .sw-prev-btn {background: url('../images/icon/prev.jpg') no-repeat center; background-size: cover}
 .sw-next-btn {background: url('../images/icon/next.jpg') no-repeat center; background-size: cover}
