@@ -20,7 +20,7 @@ $(document).ready(function () {
     new Swiper('.sw-visual', {
         loop: true,
         speed: 3000,
-        allowTouchMove: false,
+        allowTouchMove: true,
         // effect: 'fade',
         // fadeEffect: {
         // 	crossFade: true,

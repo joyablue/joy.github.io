@@ -46,7 +46,8 @@ h1, h2 { font-family: 'MADE TOMMY', sans-serif; color: #000; }
 
 /* header */
 
-.header { position: fixed; display: block; left: 50%; transform: translate(-50%); width: 73.2%; height: 8rem; line-height: 8rem; z-index: 999; } 
+.header { position: fixed; width: 100%; height: 8rem; line-height: 8rem; z-index: 999; } 
+.header .container { position: absolute; display: block; left: 50%; transform: translate(-50%); width: 73.2%; height: 8rem; line-height: 8rem; z-index: 999; } 
 
 .logo { position: absolute; left: 0; } 
 .menu { position: absolute; right: 0; text-align: center } 
@@ -219,6 +220,7 @@ span.it-bag::after { content: ''; position: absolute; left: 3rem; width: 18.8rem
 .ep-left-wrap { float: left; width: 61.5rem; height: 31rem; border: 5px solid #000;}
 .ep-left-text { float: left; width: 78.5rem; padding: 4.5rem 9rem}
 .ep-right-wrap { float: right; width: 78.5rem; height: 33rem; border: 5px solid #000;}
+.ep-right-wrap-2 { float: right; width: 78.5rem; height: 42.5rem; border: 5px solid #000;}
 .ep-right-text { float: left; width: 61.5rem; padding: 6.2rem 9rem}
 .ep-right-text-2 { height: 42.5rem; }
 
@@ -228,8 +230,8 @@ span.it-bag::after { content: ''; position: absolute; left: 3rem; width: 18.8rem
 .ep-content:hover .ep-left-wrap-2 {background: url('../images/experience/ep03.jpg') no-repeat center; background-size: cover;}
 .ep-right-wrap-1 {background: url('../images/experience/ep02-g.jpg') no-repeat center; background-size: cover;}
 .ep-content:hover .ep-right-wrap-1 {background: url('../images/experience/ep02.jpg') no-repeat center; background-size: cover;}
-.ep-right-wrap-2 {height: 42.5rem; background: url('../images/experience/ep04-g.jpg') no-repeat center; background-size: cover;}
-.ep-content:hover .ep-right-wrap-2 {height: 42.5rem; background: url('../images/experience/ep04.jpg') no-repeat center; background-size: cover;}
+.ep-right-wrap-2 {background: url('../images/experience/ep04-g.jpg') no-repeat center; background-size: cover;}
+.ep-content:hover .ep-right-wrap-2 {background: url('../images/experience/ep04.jpg') no-repeat center; background-size: cover;}
 
 .ep-title { font-family: 'MADE TOMMY', sans-serif; }
 .ep-title span {font-weight: 300; font-size: 1.8rem;}
@@ -247,17 +249,18 @@ span.it-bag::after { content: ''; position: absolute; left: 3rem; width: 18.8rem
 
 
 /* joygram */
-
+.joygram { background-color: #eee}
 .joygram h1 span { color: #ffe958}
 
-.pic-grid div { display: inline-block; width: 33%; height: 55rem; background-color: #eee; } 
+.pic-grid div { display: inline-block; width: 33%; height: 55rem; background-color: #fff; } 
 
 /* contact */
 .contact { background-color: #ffd300; padding-bottom: 0;}
 .contact h3 {text-align: center;} 
 .contact h3 img {max-width: 100%;} 
 .qr-code {position: relative; margin: 0 auto; text-align: center; min-width: 142rem; }
-.qr-code img { max-width: 100%; } 
+.qr-code img { max-width: 100%; }
+.m-qr { display: none; }
 
 /* footer */
 .footer {position: relative; width: 100%; background-color: #000; padding-top: 11rem; padding-bottom: 11rem; } 
@@ -268,7 +271,7 @@ span.it-bag::after { content: ''; position: absolute; left: 3rem; width: 18.8rem
 
 
 @media screen and (max-width: 1900px) { /* header & container */
-   .header { width: 90%; }
+   .header .container { width: 90%; }
 }
 @media screen and (max-width: 1650px){
    .competency .container p { font-size:1.7rem } 
@@ -322,8 +325,7 @@ span.it-bag::after { content: ''; position: absolute; left: 3rem; width: 18.8rem
     
     /* experience */
     .ep-content {margin-top: 3rem;}
-    .ep-content:hover .ep-text p::after {display: none;}
-
+    
     .ep-left-wrap, .ep-right-wrap { width: 100%; float: none; }
     .ep-left-text, .ep-right-text { width: 100%; padding: 2rem 0; float: none; }
     .ep-text {margin-top: 1rem;}
@@ -331,20 +333,24 @@ span.it-bag::after { content: ''; position: absolute; left: 3rem; width: 18.8rem
     .ep-left-wrap-2 {background: url('../images/experience/ep03.jpg') no-repeat center; background-size: cover;}
     .ep-right-wrap-1 {background: url('../images/experience/ep02.jpg') no-repeat center; background-size: cover;}
     .ep-right-wrap-2 {height: 42.5rem; background: url('../images/experience/ep04.jpg') no-repeat center; background-size: cover;}
-
+    
     .ep-right-text-2 { height: auto; }
-
+    
     .ep-content .ep-text p::after {content: ''; position: absolute; left: 0; width: 28rem; height: 1.5rem; margin-top: 1.2rem; background-color: #ffe958; z-index: -1}
     .ep-content:nth-child(2) .ep-text p::after {content: ''; position: absolute; left: 0; width: 12rem; height: 1.5rem; margin-top: 1.2rem; background-color: #ffe958; z-index: -1}
     .ep-content:nth-child(3) .ep-text p::after {content: ''; position: absolute; left: 0; width: 12rem; height: 1.5rem; margin-top: 1.2rem; background-color: #ffe958; z-index: -1}
     .ep-content:nth-child(4) .ep-text p::after {content: ''; position: absolute; left: 0; width: 20.5rem; height: 1.5rem; margin-top: 1.2rem; background-color: #ffe958; z-index: -1}
-    
-
+    .ep-content:hover .ep-text p::after {content: ''; position: absolute; left: 0; width: 28rem; height: 1.5rem; margin-top: 1.2rem; background-color: #ffe958; z-index: -1}
+    .ep-content:nth-child(2):hover .ep-text p::after {content: ''; position: absolute; left: 0; width: 12rem; height: 1.5rem; margin-top: 1.2rem; background-color: #ffe958; z-index: -1}
+    .ep-content:nth-child(3):hover .ep-text p::after {content: ''; position: absolute; left: 0; width: 12rem; height: 1.5rem; margin-top: 1.2rem; background-color: #ffe958; z-index: -1}
+    .ep-content:nth-child(4):hover .ep-text p::after {content: ''; position: absolute; left: 0; width: 20.5rem; height: 1.5rem; margin-top: 1.2rem; background-color: #ffe958; z-index: -1}
    /* joygram */
    .pic-grid div { width: 100%; height: 35rem } 
-   }
+
+}
 
 @media screen and (max-width: 1023px){
+
    .container, .qr-code { min-width: 76.8rem;}
    .text-img h2 { font-size: 1.8rem; letter-spacing: 0.03rem;}
    /* about */
@@ -370,12 +376,14 @@ span.it-bag::after { content: ''; position: absolute; left: 3rem; width: 18.8rem
 }
 
 @media screen and (max-width: 767px){
+
+   .container, .qr-code { min-width: 48rem;}
+
    .header { margin-top: 0rem; }
    .sidebar_menu { width: 100%; }
    .logo img { width: 70%; } 
    .menu img { width: 65%; } 
    
-   .section, .qr-code { min-width: 480px; }
    .main {padding-top: 10%; padding-bottom: 35%;}
    .main-banner {padding-top: 0;}
    .main-banner .left-wrap {width: 100%; padding-top: 0; float: none; z-index: 1;}
@@ -383,7 +391,7 @@ span.it-bag::after { content: ''; position: absolute; left: 3rem; width: 18.8rem
    .main-banner img { max-width: 80% }
    .text-img h2 { font-size: 2.4rem; letter-spacing: 0.25rem; }
 
-   .container h3 img {max-width: 50%}
+   .container h3 img, .contact h3 > img {max-width: 50%}
 
    .left-pic { background-size: auto; background-position: center}
 
@@ -391,4 +399,75 @@ span.it-bag::after { content: ''; position: absolute; left: 3rem; width: 18.8rem
    .education ul li, .license ul li { font-size: 1.8rem; }
 
    .skill-m div { width: 49.5%; margin-right: 0.2rem !important;}
+
+   /* publishing */
+   .pb-slide .sw-control { top: 58% }
+   /* design */
+   .dg-slide .sw-control { top: 55%; }
+
+
+   .pb-slide .banner-img, .dg-slide .banner-img { height: 35rem; }
+   .box-title > p {font-size: 2.6rem}
+   .box-btn a {margin-top: 2rem;}
+
+
+   /* experience */
+   .ep-left-wrap, .ep-right-wrap, .ep-right-wrap-2 { height: 25rem;}
+
+   
+   /* contact */
+   .pc-qr {display: none;}
+   .qr-code a {position: relative; display: block; width: 100%; text-align: center; }
+   .m-qr { display: block; margin: 0 auto; max-width: 80% !important}
+
+
 }   
+
+@media screen and (max-width: 480px){
+   .container, .qr-code { min-width:36rem;}
+   .header, .header .container { line-height: 6rem; height: 6rem;}
+   
+   .logo img {width: 50%;}
+   .menu img {width: 45%;}
+
+   .main {padding-top: 13%; padding-bottom: 56%;}
+   .main-banner .left-wrap {padding-top: 2%;}
+   .main-banner .right-wrap {left: 0}
+   .text-img { text-align: center;}
+   .text-img h2 {font-size: 1.8rem;}
+
+   .more-ico { display: none;}
+
+   .heart-ico {top:21%; right: 65%; max-width: 25% !important;}
+
+   .pic-ico, .sns-ico {width: 50%;}
+
+   .left-pic { height: 25rem; background-size: cover; background-position: center;}
+   .education h2, .license h2 { font-size: 2.1rem; }
+   .education ul li, .license ul li { font-size: 1.6rem; }
+
+   .skill-m div {width: 49.44%;}
+
+
+   .competency .container span { font-size: 2.1rem; }
+   .competency .container p { font-size: 1.6rem; }
+
+
+   .pb-slide .banner-img, .dg-slide .banner-img { height: 25rem; border: 4px solid #000}
+   .pb-slide .sw-control, .dg-slide .sw-control {display: none;}
+
+   .box-title > p { font-size: 2.1rem; }
+   .box-content { font-size: 1.6rem; }
+
+   .box-btn a { padding: 2rem 3rem; border: 2px solid #000}
+
+
+   .ep-left-wrap, .ep-right-wrap, .ep-right-wrap-2 {height: 20rem;}
+   .ep-title span, .ep-text { font-size: 1.6rem; }
+   .ep-title p { font-size: 2.1rem; }
+
+   .ep-content {margin-top: 0; margin-bottom: 2rem;}
+
+   .qr-code a { padding-top: 10%; }
+
+}
