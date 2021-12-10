@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    // 메뉴
     $('.menu').on('click', function (e) {
         $('.menu_bg').show();
         $('.sidebar_menu').show().animate({
@@ -6,6 +7,8 @@ $(document).ready(function () {
         });
         e.preventDefault();
     });
+
+    // 메뉴닫기버튼
     $('.close_btn>a').on('click', function (e) {
         e.preventDefault();
         $('.menu_bg').hide();
@@ -16,15 +19,15 @@ $(document).ready(function () {
         });
     });
 
-    // visual swiper
-    new Swiper('.sw-visual', {
+    // 퍼블리싱 슬라이드
+    let sw_visual = new Swiper('.sw-visual', {
         loop: true,
         speed: 3000,
         allowTouchMove: true,
-        // effect: 'fade',
-        // fadeEffect: {
-        // 	crossFade: true,
-        // },
+        effect: 'fade',
+        fadeEffect: {
+        	crossFade: false,
+        },
         autoplay: {
             delay: 3000,
             disableOnInteraction: false,
@@ -33,22 +36,22 @@ $(document).ready(function () {
             prevEl: '.sw-prev-btn',
             nextEl: '.sw-next-btn',
         }
+    })
+
+    sw_visual.on('transitionStart', function() {
+        $(".pb-slide .banner-box-wrap .banner-box").hide().eq(sw_visual.realIndex).show()
+        // console.log('now index :::', content_right.realIndex);
     });
 
-    new Swiper('.sw-visual-2', {
-        direction: "horizontal",
+    // 디자인 슬라이드
+    let sw_visual_2 = new Swiper('.sw-visual-2', {
+        loop: true,
         speed: 3000,
         allowTouchMove: true,
-        // effect: 'coverflow',
-        // coverflowEffect: {
-        //     rotate: 30,
-        //     stretch: 50,
-        //     depth: 50,
-        //     modifier: 1.5,
-        //     slideShadows : false,
-        // },
-        loop: true,
-        slidesPerView: 'auto',
+        effect: 'fade',
+        fadeEffect: {
+        	crossFade: false,
+        },
         autoplay: {
             delay: 3000,
             disableOnInteraction: false,
@@ -82,9 +85,42 @@ $(document).ready(function () {
                 },
             },
         }
+    })
+
+    sw_visual_2.on('transitionStart', function() {
+        $(".dg-slide .banner-box-wrap .banner-box").hide().eq(sw_visual_2.realIndex).show()
+        // console.log('now index :::', content_right.realIndex);
+    });
+
+    // 사진 클릭시 확대
+    $('.pic-grid > div').click(function(){
+        var i = $(this).index();
+        $('.modal').fadeTo(500,1);
+        $('.list li').eq(i).show();
+
+        $('html, body').css({'overflow': 'hidden'}); 
+        // 모달팝업 중 html,body의 scroll을 hidden시킴
+        $('html, body').on('scroll touchmove mousewheel', function(e) { 
+        // 터치무브와 마우스휠 스크롤 방지
+            e.preventDefault();
+            e.stopPropagation();
+
+            return false;
+        });
+    });
+    $('.modal').click(function(){
+        $('html, body').css({'overflow': 'auto'}); 
+        //scroll hidden 해제
+        $('html, body').off('scroll touchmove mousewheel');
+        // 터치무브 및 마우스휠 스크롤 가능
+        
+        $(this).fadeOut();
+        $(this).fadeTo(10,1);
+        $('.list li').hide();
     });
 });
 
+// 각 요소별 AOS 기능 사용
 window.addEventListener('load', function (e) {
     AOS.init({
         // Global settings:

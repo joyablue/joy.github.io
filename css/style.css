@@ -17,10 +17,10 @@ html { font-size: 10px; overflow-x: hidden; cursor: url(mouse.png), url(mouse.cu
 html { scrollbar-3dLight-Color: #efefef; scrollbar-arrow-color: #dfdfdf; scrollbar-base-color: #efefef; scrollbar-Face-Color: #dfdfdf; scrollbar-Track-Color: #efefef; scrollbar-DarkShadow-Color: #efefef; scrollbar-Highlight-Color: #efefef; scrollbar-Shadow-Color: #efefef; -ms-overflow-style: none; /* overflow: auto; */}
 
 /* SCROLL */
-::-webkit-scrollbar { width: 5px; } 
+::-webkit-scrollbar { width: 0.5rem; } 
 
 /* 스크롤바의 width */
-::-webkit-scrollbar-track { background-color: #ffeb58; } 
+::-webkit-scrollbar-track { background-color: #000; } 
 
 /* 스크롤바의 전체 배경색 */
 ::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #ffb400, #ffb400); } 
@@ -28,7 +28,9 @@ html { scrollbar-3dLight-Color: #efefef; scrollbar-arrow-color: #dfdfdf; scrollb
 /* 스크롤바 색 */
 ::-webkit-scrollbar-button { display: none; } 
 
-body { font-family: 'Noto Sans KR', sans-serif; color: #000; transition: 0.3s all; cursor: url("../mouse.png"), url("../mouse.cur"), auto}
+body { font-family: 'Noto Sans KR', sans-serif; color: #000; transition: 0.5s all; cursor: url("../mouse.png"), url("../mouse.cur"), auto}
+
+body * {transition: 0.5s;}
 
 h1, h2 { font-family: 'MADE TOMMY', sans-serif; color: #000; } 
 
@@ -162,9 +164,9 @@ span.it-bag::after { content: ''; position: absolute; left: 3rem; width: 18.8rem
 
 /* publishing */
 
-.pb-slide {position: relative; width: 100%; display: block;}
-
-.pb-slide .banner-img { position: relative; float: left; width: 81rem; height: 50rem; border-radius: 2.5rem 0 0 0; border: 5px solid #000 }
+.pb-slide {position: relative; width: 100%; display: block; }
+.pb-slide .sw-visual {position: relative; float: left; width: 81rem; height: 50rem; border-radius: 2.5rem 0 0 0; border: 5px solid #000 }
+.pb-slide .banner-img { width: 100%; height: 50rem;}
 .pb-slide .banner-img-1 {background: url('../images/publishing/pb01.jpg') no-repeat center; background-size: cover;}
 .pb-slide .banner-img-2 {background: url('../images/publishing/pb02.jpg') no-repeat center; background-size: cover;}
 .pb-slide .banner-img-3 {background: url('../images/publishing/pb03.jpg') no-repeat center; background-size: cover;}
@@ -173,9 +175,9 @@ span.it-bag::after { content: ''; position: absolute; left: 3rem; width: 18.8rem
 .pb-slide .banner-img-6 {background: url('../images/publishing/pb06.jpg') no-repeat center; background-size: cover;}
 .pb-slide .banner-img-7 {background: url('../images/publishing/pb07.jpg') no-repeat center; background-size: cover;}
 
-.pb-slide .banner-box { position: relative; float: left; width: 50rem; height: 32rem; line-height: 1.2; letter-spacing: -0.10rem; margin-left: 7rem; margin-top: 3.5rem;}
-
-
+.pb-slide .banner-box-wrap { position: relative; float: left; width: 50rem; height: 32rem; line-height: 1.2; letter-spacing: -0.10rem; margin-left: 7rem; margin-top: 3.5rem;}
+.pb-slide .banner-box-wrap .banner-box {position: absolute;display: none;  }
+.pb-slide .banner-box-wrap .banner-box:first-child {display: block;}
 /* swiper-control */
 .pb-slide .sw-control {position: absolute; display: block; right: 0; top: 17%; z-index: 1;}
 .sw-control li {float:left; cursor: pointer; width: 4rem; height: 4rem; margin-right: 0.2rem;}
@@ -201,15 +203,18 @@ span.it-bag::after { content: ''; position: absolute; left: 3rem; width: 18.8rem
 
 /* design */
 .design { background: url('../images/design-bg.jpg') no-repeat center; background-size: cover; }
-.dg-slide {position: relative; width: 100%; display: block;; margin: 0 auto;}
-.sw-visual-2 {height: 50rem; overflow: hidden;}
-.dg-slide .banner-img { position: relative; float: right; width: 81rem; height: 50rem; border-radius: 0 2.5rem 0 0; border: 5px solid #000 }
+.dg-slide {position: relative; width: 100%; display: block; margin: 0 auto; }
+.dg-slide .sw-visual-2 {position: relative; float: right; width: 81rem; height: 50rem; overflow: hidden; border-radius: 2.5rem 0 0 0; border: 5px solid #000 }
+.dg-slide .banner-img { width: 100%; height: 50rem; ; }
 .dg-slide .banner-img-1 {background: url('../images/design/dg01.jpg') no-repeat center; background-size: cover;}
 
-.dg-slide .banner-box { position: relative; float: left; width: 50rem; height: 32rem; line-height: 1.2; letter-spacing: -0.10rem; margin-top: 3.5rem;}
+.dg-slide .banner-box-wrap { position: relative; float: left; width: 50rem; height: 32rem; line-height: 1.2; letter-spacing: -0.10rem; margin-left: 7rem; margin-top: 3.5rem;}
+.dg-slide .banner-box-wrap .banner-box {position: absolute;display: none;  }
+.dg-slide .banner-box-wrap .banner-box:first-child {display: block;}
+
 
 /* swiper-control */
-.dg-slide .sw-control {position: absolute; display: block; left: 24.5%; top: 17%; z-index: 1;}
+.dg-slide .sw-control {position: absolute; display: block; left: 30%; margin-top: 5%; z-index: 1;}
 .dg-slide .sw-control .sw-prev-btn,
 .dg-slide .sw-control .sw-next-btn { transform: rotate(90deg); }
 .dg-slide a.box-btn-1 { background: #9000ff; color: #fff; }
@@ -252,7 +257,7 @@ span.it-bag::after { content: ''; position: absolute; left: 3rem; width: 18.8rem
 .joygram { background-color: #eee}
 .joygram h1 span { color: #ffe958}
 
-.pic-grid div { position: relative; display: block; float:left; width: 33%; height: 35rem; background-size: cover; overflow: hidden;} 
+.pic-grid div { position: relative; display: inline-block; width: 33%; height: 35rem; background-size: cover; overflow: hidden;} 
 .pic-grid div:first-child {background: url('../images/joygram/joygram01.jpg') no-repeat center; background-size: cover;}
 .pic-grid div:nth-child(2) {background: url('../images/joygram/joygram02.jpg') no-repeat center; background-size: cover;}
 .pic-grid div:nth-child(3) {background: url('../images/joygram/joygram03.jpg') no-repeat center; background-size: cover;}
@@ -260,6 +265,13 @@ span.it-bag::after { content: ''; position: absolute; left: 3rem; width: 18.8rem
 .pic-grid div:nth-child(5) {background: url('../images/joygram/joygram05.jpg') no-repeat center; background-size: cover;}
 .pic-grid div:last-child {background: url('../images/joygram/joygram06.jpg') no-repeat center; background-size: cover;}
 
+.joygram .modal{position: fixed; width: 100%; height: 100%; left: 0; top: 0; background-color: rgba(0,0,0,0.7); z-index: 9999; display: none;}
+.joygram .modal .list{position: relative; left: 50%; top: 50%; transform: translate(-50%, -50%);}
+.joygram .modal .list img{position: relative; left: 50%; transform: translateX(-50%); max-width: 100%;}
+.joygram .close { position: absolute;right: 5%; top: 5%; text-align: center; cursor: pointer; z-index: 9999; }
+
+.joygram .modal .list li{display: none;}
+.joygram .wrapper .pic_container div:hover {opacity:0.8}
 
 /* contact */
 .contact { background-color: #ffd300; padding-bottom: 0;}
@@ -318,15 +330,17 @@ span.it-bag::after { content: ''; position: absolute; left: 3rem; width: 18.8rem
    .box-content { margin-top: 1.5rem; }
 
    /* publishing */
+   .pb-slide {width: 100%}
+   .pb-slide .sw-visual {width: 100%; height: auto; float: none;}
    .pb-slide .banner-img { width: 100%; }
-   .pb-slide .banner-box { width: 100%; height: auto; margin-left: 0; margin-top: 0;}
-   .pb-slide .sw-control { left: auto; right: 0; top: 67%;}
+   .pb-slide .banner-box-wrap { width: 100%; margin-left: 0; margin-top: 0;}
+   .pb-slide .sw-control { left: auto; right: 0%; top: 13%;}
 
     /* design */
-    .sw-visual-2 {height: auto; overflow: visible; width: 100%;  overflow: hidden;}
+    .dg-slide .sw-visual-2 {height: auto; overflow: visible; width: 100%;  overflow: hidden;}
     .dg-slide .banner-img {float: left; width: 100%;}
-    .dg-slide .banner-box {float: left; width: 100%; height: auto; margin-top: 0;}
-    .dg-slide .sw-control { left: auto; right: 0; top: 65%;}
+    .dg-slide .banner-box-wrap {float: left; width: 100%; margin-top: 0; margin-left: 0;}
+    .dg-slide .sw-control { left: auto; right: 0; margin-top: 55%;}
     .dg-slide .sw-control .sw-prev-btn, .dg-slide .sw-control .sw-next-btn { transform: rotate(0deg) }
 
     
@@ -379,6 +393,8 @@ span.it-bag::after { content: ''; position: absolute; left: 3rem; width: 18.8rem
    .competency .container span { font-size:2.4rem; } 
    .competency .container p { font-size: 1.8rem; } 
 
+   .dg-slide .sw-control { margin-top: 72%;}
+
    .pic-grid div {width: 100%}
 
 }
@@ -411,11 +427,7 @@ span.it-bag::after { content: ''; position: absolute; left: 3rem; width: 18.8rem
 
    .skill-m div { width: 49.5%; margin-right: 0.2rem !important;}
 
-   /* publishing */
-   .pb-slide .sw-control { top: 58% }
-   /* design */
-   .dg-slide .sw-control { top: 55%; }
-
+   .pb-slide .sw-control, .dg-slide .sw-control {display: none;}
 
    .pb-slide .banner-img, .dg-slide .banner-img { height: 35rem; }
    .box-title > p {font-size: 2.6rem}
@@ -466,8 +478,8 @@ span.it-bag::after { content: ''; position: absolute; left: 3rem; width: 18.8rem
    .competency .container p { font-size: 1.6rem; }
 
 
-   .pb-slide .banner-img, .dg-slide .banner-img { height: 25rem; border: 4px solid #000}
-   .pb-slide .sw-control, .dg-slide .sw-control {display: none;}
+   .pb-slide .banner-img, .dg-slide .banner-img { height: 25rem;}
+  
 
    .box-title > p { font-size: 2.1rem; }
    .box-content { font-size: 1.6rem; }
