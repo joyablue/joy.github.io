@@ -230,6 +230,8 @@ span.it-bag::after { content: ''; position: absolute; left: 3rem; width: 18.8rem
 .dg-slide a.box-btn-3 { background: #edb874; color: #000; }
 .dg-slide a.box-btn-4 { background: #2da8ba; color: #fff; }
 .dg-slide a.box-btn-5 { background: #d5372c; color: #fff; }
+.dg-slide a.box-btn-6 { background: #e0c069; color: #fff; }
+.dg-slide a.box-btn-7 { background: #403835; color: #fff; }
 
 /* experience */
 .ep-wrapper { position: relative; width: 100%; margin: 0 auto }
