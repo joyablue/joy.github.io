@@ -22,7 +22,7 @@ $(document).ready(function () {
     // 퍼블리싱 슬라이드
     let sw_visual = new Swiper('.sw-visual', {
         loop: true,
-        speed: 3000,
+        speed: 1000,
         allowTouchMove: true,
         effect: 'fade',
         fadeEffect: {
@@ -45,13 +45,14 @@ $(document).ready(function () {
 
     // 디자인 슬라이드
     let sw_visual_2 = new Swiper('.sw-visual-2', {
+        // direction: 'vertical',
         loop: true,
-        speed: 3000,
+        speed: 1000,
         allowTouchMove: true,
-        effect: 'fade',
-        fadeEffect: {
-        	crossFade: false,
-        },
+        // effect: 'fade',
+        // fadeEffect: {
+        // 	crossFade: false,
+        // },
         autoplay: {
             delay: 3000,
             disableOnInteraction: false,
@@ -62,17 +63,9 @@ $(document).ready(function () {
         },
         breakpoints: { // 화면의 넓이가 1410px 이상일 때
             1410: {
-                direction: "vertical",
-                speed: 3000,
+                direction: 'vertical',
+                speed: 1000,
                 allowTouchMove: true,
-                // effect: 'coverflow',
-                // coverflowEffect: {
-                //     rotate: 30,
-                //     stretch: 50,
-                //     depth: 50,
-                //     modifier: 1.5,
-                //     slideShadows : false,
-                // },
                 loop: true,
                 slidesPerView: 'auto',
                 autoplay: {
