@@ -1,0 +1,38 @@
+@charset "utf-8";
+@import url('http://fonts.cdnfonts.com/css/made-tommy-outline');
+
+
+
+* { margin: 0; padding: 0; box-sizing: border-box; } 
+
+a { color: #000; text-decoration: none; } 
+
+img { border: 0; vertical-align: middle; } 
+
+ul,
+li { list-style: none; } 
+
+html { font-size: 10px; overflow-x: hidden; cursor: url(mouse.png), url(mouse.cur), auto; transition: 0.5s all; overflow-x: hidden; } 
+
+html { scrollbar-3dLight-Color: #efefef; scrollbar-arrow-color: #dfdfdf; scrollbar-base-color: #efefef; scrollbar-Face-Color: #dfdfdf; scrollbar-Track-Color: #efefef; scrollbar-DarkShadow-Color: #efefef; scrollbar-Highlight-Color: #efefef; scrollbar-Shadow-Color: #efefef; -ms-overflow-style: none; /* overflow: auto; */}
+
+/* SCROLL */
+::-webkit-scrollbar { width: 5px; } 
+
+/* 스크롤바의 width */
+::-webkit-scrollbar-track { background-color: #ffeb58; } 
+
+/* 스크롤바의 전체 배경색 */
+::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #ffb400, #ffb400); } 
+
+/* 스크롤바 색 */
+::-webkit-scrollbar-button { display: none; } 
+
+body { font-family: 'Noto Sans KR', sans-serif; color: #333; transition: 0.3s all; cursor: url("../mouse.png"), url("../mouse.cur"), auto}
+
+
+/* 공통 */
+.section {position: relative; display: block; width: 100%; text-align: center;}
+.clearfix::after { content: ''; position: relative; display: block; width: 100%; clear: both; } 
+
+.section img {width: 100%;}
