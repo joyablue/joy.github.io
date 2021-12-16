@@ -84,10 +84,10 @@ $(document).ready(function () {
         $(".dg-slide .banner-box-wrap .banner-box").hide().eq(sw_visual_2.realIndex).show()
         // console.log('now index :::', content_right.realIndex);
     });
-
-    // 사진 클릭시 확대
-    $(".pic-grid").isotope({
-        itemSelector: ".item"
+    $(".pic-grid").imagesLoaded( function() {
+        $(".pic-grid").isotope({
+            itemSelector: ".item"
+        })
     })
     $(".pic-btn li").eq(0).addClass("on");
 
@@ -100,7 +100,7 @@ $(document).ready(function () {
             filter: selector
         })
     });
-
+    // 사진 클릭시 확대
     $('.pic-grid > div').click(function(){
         var i = $(this).index();
         $('.modal').fadeTo(500,1);
