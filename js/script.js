@@ -86,6 +86,21 @@ $(document).ready(function () {
     });
 
     // 사진 클릭시 확대
+    $(".pic-grid").isotope({
+        itemSelector: ".item"
+    })
+    $(".pic-btn li").eq(0).addClass("on");
+
+    $(".pic-btn li").click(function (e) {
+        e.preventDefault();
+        let i = $(this).index();
+        $(".pic-btn li").removeClass("on").eq(i).addClass("on");
+        let selector = $(this).attr("data-filter");
+        $(".pic-grid").isotope({
+            filter: selector
+        })
+    });
+
     $('.pic-grid > div').click(function(){
         var i = $(this).index();
         $('.modal').fadeTo(500,1);
