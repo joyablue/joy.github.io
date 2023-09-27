@@ -744,6 +744,11 @@ h3 > span {font-weight:400;}
 
 @media screen and (max-width: 1210px){
 
+  #design {
+    height: auto !important;
+    padding:10rem;
+  }
+
   .ds-wrap {
     max-width:101rem;
   }
