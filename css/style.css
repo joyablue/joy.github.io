@@ -16,6 +16,12 @@ h3 > span {font-weight:400;}
 
 .bg-wrap { background-color: #f5f5f5; }
 
+@media screen and (max-width: 1210px){
+  body {font-size:1.4rem; letter-spacing: -0.05rem;}
+  h3 {font-size: 3.6rem;}
+}
+
+
 /* wrap */
 #wrap {
   position:relative;
@@ -200,13 +206,36 @@ h3 > span {font-weight:400;}
 }
 
 
+@media screen and (max-width: 1210px){
+
+	#main .title p {
+    font-size: 1.8rem; 
+    padding: 1rem 3rem;
+  }
+
+  #main .title h2 {
+    font-size: 10rem;
+  }
+
+  #main .title p::before {
+    top: -5rem;
+    right: -5rem;
+    width: 8rem;
+    height: 6rem;
+    background-position: center center;
+    background-size: cover;
+  }
+
+}
+
+
 /* intro */
 
 #intro .profile {
   display:flex;
   flex-direction: row;  
   align-items: center;
-  max-width: 198rem;
+  max-width: 121rem;
   gap: 7rem
 }
 
@@ -216,6 +245,7 @@ h3 > span {font-weight:400;}
   border-radius:2rem;
   box-shadow: 0.4rem 0.4rem 0.8rem #ccc;
   background: url('../images/profile.jpg') no-repeat center center;
+  background-size: cover;
 }
 
 .profile .text-wrap {
@@ -234,6 +264,24 @@ h3 > span {font-weight:400;}
   height: 100%;
   max-width:13rem;
   max-height:13rem;
+}
+
+@media screen and (max-width: 1210px){
+
+  #intro .profile {
+    padding: 0 2rem;
+    max-width: 118rem;
+  }
+
+  .profile .text-wrap {
+    width: auto;
+  }
+
+  .profile .img-wrap {
+    width: 38rem;
+    height: 45rem;
+  }
+
 }
 
 
@@ -277,7 +325,7 @@ h3 > span {font-weight:400;}
   flex-direction: row;
   justify-content: center;
   gap: 9rem;
-  max-width: 198rem;
+  max-width:121rem;
 }
  
 .tab-menu li {
@@ -317,7 +365,7 @@ h3 > span {font-weight:400;}
 }
 
 .tab-content h4 {
-  line-height:1.25;
+  line-height: 1.25;
   font-size: 2.8rem;
 }
 
@@ -374,6 +422,42 @@ h3 > span {font-weight:400;}
   display: block;
 }
 
+
+
+@media screen and (max-width: 1210px){
+
+  #career {
+    height: auto !important;
+    gap: 9rem;
+    padding: 10rem;
+  }
+
+  .tab-menu a {
+    font-size: 1.4rem;
+  }
+
+  .tab-container {
+    max-width: 105rem;
+  }
+
+  .tab-content {
+    width: 71rem;
+    height: auto;
+  }
+
+  .tab-content h4 {
+    font-size: 2.4rem;
+  }
+
+  .tab-content .li-wrap {
+    gap: 3rem;
+  }
+
+  .tab-content .li-wrap ul li {
+    font-size: 1.3rem;
+  }
+
+}
 
 /* project */
 
@@ -540,6 +624,44 @@ h3 > span {font-weight:400;}
   border: 0.1rem solid #333;
 }
 
+@media screen and (max-width: 1210px){
+  
+  .pr-wrap {
+    max-width: 118rem;
+    padding: 0 2rem;
+  }
+  
+  .pr-list {
+    max-width: 100%;
+    margin: 0 0;
+    box-sizing: border-box;
+    padding: 0 1rem;
+  }
+  .pr-list .preview {
+    height: 22rem;
+  }
+  .pr-list .text-wrap p {
+    max-width: 18rem;
+    font-size: 2.1rem;
+  }
+
+  .pr-list .text-wrap a {
+    padding: 0.5rem 1.5rem;
+    font-size: 1.2rem;
+  }
+
+  .pr-list .preview::before {
+    padding: 0.4rem 1rem;
+    right: 9rem
+  }
+
+  .pr-list .preview::after {
+    padding: 0.4rem 1rem;
+  }
+
+
+}
+
 /* design */
 #design {
   gap: 9rem
@@ -611,6 +733,7 @@ h3 > span {font-weight:400;}
 
 .zip-cont .text-wrap p img {
   margin-right: 2rem;
+  max-width:100%;
 }
 
 .zip-cont .text-wrap span {
@@ -618,6 +741,27 @@ h3 > span {font-weight:400;}
   letter-spacing: 0.015rem;
   line-height:1.7
 }
+
+@media screen and (max-width: 1210px){
+
+  .ds-wrap {
+    max-width:101rem;
+  }
+ 
+  .zip-cont .thumb {
+    background-size: cover !important;
+    width: 21rem;
+    height: 17rem;
+  }
+
+  .zip-cont .text-wrap {
+    width:26rem;
+  }
+
+  .zip-cont .text-wrap p {
+    font-size: 2.1rem;
+  }
+} 
 
 /* footer */
 
