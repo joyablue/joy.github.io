@@ -234,6 +234,14 @@ h3 > span {font-weight:400;}
 }
 
 
+@media screen and (max-width: 767px){
+  #main {
+    height: auto !important;
+    padding: 24rem 0;
+  }
+}
+
+
 /* intro */
 
 #intro .profile {
@@ -478,7 +486,49 @@ h3 > span {font-weight:400;}
   }
 }
 
+@media screen and (max-width: 767px){
 
+  #career {
+    padding: 10rem 2rem
+  }
+
+  .tab-menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .tab-container {
+    flex-direction: column;
+    max-width:100%;
+    gap: 5rem;
+  }
+
+
+  .tab-menu li {
+    width: 33.33333%
+  }
+
+  .tab-menu a {
+    width: 100%;
+  }
+
+  .tab-content.active {
+    display:flex;
+    width: 100%;
+    gap: 3rem;
+  }
+
+  .tab-content span {
+    margin: 1.5rem 0 0 0;
+  }
+}
+
+@media screen and (max-width: 730px){
+
+
+
+}
 
 
 /* project */
