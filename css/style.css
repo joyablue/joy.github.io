@@ -338,7 +338,7 @@ h3 > span {font-weight:400;}
   }
 }
 
-@media screen and (max-width: 767px){
+@media screen and (max-width: 800px){
   #intro .profile {
     flex-direction: column;
   }
