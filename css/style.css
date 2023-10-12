@@ -298,7 +298,6 @@ h3 > span {font-weight:400;}
 .profile .text-wrap p {
   line-height:2;
   font-weight:300;
-  font-size:1.8rem
 }
 
 .profile .text-wrap .title {
@@ -340,6 +339,10 @@ h3 > span {font-weight:400;}
 }
 
 @media screen and (max-width: 767px){
+  #intro .profile {
+    flex-direction: column;
+  }
+
   .profile .img-wrap {
     width: 32rem;
 
@@ -692,7 +695,7 @@ h3 > span {font-weight:400;}
 .pr-list .text-wrap span u {
   position: relative;
   font-weight:400;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   font-style: normal;
   color: #ccc;
   margin-left: 2rem;
@@ -803,8 +806,8 @@ h3 > span {font-weight:400;}
 }
 
 @media screen and (max-width: 767px){
-  .pr-list .preview {
-    height: 16rem;
+  .pr-list {
+    width: 50%;
   }
 }
 
