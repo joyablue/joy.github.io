@@ -295,6 +295,12 @@ h3 > span {font-weight:400;}
   width:72rem
 }
 
+.profile .text-wrap p {
+  line-height:2;
+  font-weight:300;
+  font-size:1.8rem
+}
+
 .profile .text-wrap .title {
   display:flex;
   flex-direction: row;
