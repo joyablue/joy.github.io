@@ -590,9 +590,11 @@ h3 > span {font-weight:400;}
   }
 }
 
-@media screen and (max-width: 730px){
+@media screen and (max-width: 500px){
 
-
+  #career {
+    padding:10rem 2rem !important
+  }
 
 }
 
@@ -811,6 +813,16 @@ h3 > span {font-weight:400;}
   }
 }
 
+@media screen and (max-width: 410px){
+  .pr-list {
+    width: 100%;
+  }
+
+  .pr-list .preview {
+    height: 23rem
+  }
+}
+
 
 
 /* design */
@@ -931,6 +943,21 @@ h3 > span {font-weight:400;}
 
   .zip-cont {
     gap: 3.5rem;
+  }
+}
+
+@media screen and (max-width: 500px){
+  .ds-wrap {
+    width: 30rem;
+  }
+
+  .zip-cont .thumb {
+    width:100%;
+    height: 20rem;
+  }
+
+  .zip-cont {
+    gap: 2rem
   }
 }
 
