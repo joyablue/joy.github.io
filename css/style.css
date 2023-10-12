@@ -340,7 +340,7 @@ h3 > span {font-weight:400;}
 
 @media screen and (max-width: 800px){
   #intro .profile {
-    flex-direction: column;
+    flex-direction: column !important;
   }
 
   .profile .img-wrap {
