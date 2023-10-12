@@ -813,13 +813,13 @@ h3 > span {font-weight:400;}
   }
 }
 
-@media screen and (max-width: 410px){
+@media screen and (max-width: 500px){
   .pr-list {
     width: 100%;
   }
 
   .pr-list .preview {
-    height: 23rem
+    height: 25rem
   }
 }
 
