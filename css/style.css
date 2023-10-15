@@ -3,7 +3,7 @@
 @import url('https://db.onlinewebfonts.com/c/5482fb069db60c35de84de3132a2a080?family=AdamGorry-Inline');
 
 * { margin: 0; padding: 0; box-sizing: border-box;   } 
-html { font-size: 10px; overflow-x: hidden; }
+html { font-size: 10px; overflow-x: hidden; min-width:42rem}
 body { font-family: 'Pretendard', sans-serif; background-color: #fff; font-size:1.6rem; letter-spacing: -0.05rem;}
 
 a { color: #333; text-decoration: none; } 
@@ -820,6 +820,10 @@ h3 > span {font-weight:400;}
 
   .pr-list .preview {
     height: 25rem
+  }
+
+  .pr-list .text-wrap p {
+    max-width: 100%
   }
 }
 
