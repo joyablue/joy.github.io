@@ -314,6 +314,19 @@ h3 > span {font-weight:400;}
   max-height:13rem;
 }
 
+.skill-box {
+  position:relative;
+  display:block;
+  margin-top:2rem;
+  width:100%;
+}
+
+.skill-box img {
+  max-width: 5rem;
+  margin-right:1rem
+}
+
+
 @media screen and (max-width: 1280px){
 
   #intro .profile {
@@ -363,6 +376,17 @@ h3 > span {font-weight:400;}
   .profile .text-wrap .title img {
     width: 6rem;
     height: 6rem;
+  }
+}
+
+@media screen and (max-width: 470px){
+
+  .skill-box img {
+    margin-right:0.5rem
+  }
+
+  .profile .text-wrap p {
+    font-size:1.3rem
   }
 }
 
