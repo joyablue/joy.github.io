@@ -704,6 +704,18 @@ h3 > span {font-weight:400;}
   background: url("../images/pj-09.jpg") no-repeat center center;
 }
 
+.pv-10 {
+  background: url("../images/pj-10.jpg") no-repeat center center;
+}
+
+.pv-11 {
+  background: url("../images/pj-11.jpg") no-repeat center center;
+}
+
+.pv-12 {
+  background: url("../images/pj-12.jpg") no-repeat center center;
+}
+
 .pr-list .text-wrap {
   display: flex;
   flex-direction: row;
