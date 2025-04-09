@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>햄버거 메뉴 + 부드러운 스크롤 + 반응형 + 밑줄 애니메이션</title>
+
+<!-- 스타일 -->
+<style>
+body {margin:0; font-family:Arial,sans-serif;}
+.header {position:fixed; top:0; left:0; width:100%; height:60px; background:#fff; box-shadow:0 2px 5px rgba(0,0,0,0.1); display:flex; align-items:center; padding:0 20px; z-index:1002; box-sizing:border-box;}
+.menu-button {background:none; border:none; font-size:28px; color:#f06292; cursor:pointer; margin-right:15px;}
+.menu-button.active {color:#333;}
+.logo {font-size:24px; font-weight:bold; color:#f06292;}
+.header nav {margin-left:auto;}
+.header nav ul {display:flex; list-style:none; margin:0; padding:0;}
+.header nav li {position:relative; margin-left:30px; font-size:18px; color:#333; cursor:pointer; transition:color 0.3s;}
+.header nav li:hover {color:#f06292;}
+.header nav li::after {content:''; position:absolute; left:0; bottom:-5px; width:100%; height:2px; background:#f06292; transform:scaleX(0); transform-origin:left; transition:transform 0.3s ease;}
+.header nav li.active::after {transform:scaleX(1);}
+.side-menu {position:fixed; top:0; left:-400px; width:300px; height:100%; background:#f06292; box-shadow:2px 0 5px rgba(0,0,0,0.3); transition:left 0.4s ease; z-index:1000; padding:80px 20px; box-sizing:border-box;}
+.side-menu.active {left:0;}
+.side-menu ul {list-style:none; padding:0; margin:0;}
+.side-menu li {position:relative; margin-bottom:20px; font-size:20px; color:#fff; cursor:pointer;}
+.side-menu li::after {content:''; position:absolute; left:0; bottom:-5px; width:100%; height:2px; background:#fff; transform:scaleX(0); transform-origin:left; transition:transform 0.3s ease;}
+.side-menu li.active::after {transform:scaleX(1);}
+.overlay {position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.4); opacity:0; visibility:hidden; transition:opacity 0.4s ease; z-index:999;}
+.overlay.active {opacity:1; visibility:visible;}
+.main-content {padding-top:60px;}
+.section {height:100vh; padding:40px; box-sizing:border-box;}
+#home {background:#ffe0e0;}
+#about {background:#e0f7fa;}
+#service {background:#f3e5f5;}
+#contact {background:#e8f5e9;}
+@media (max-width:768px) {
+.header {flex-wrap:wrap; height:auto; padding:10px;}
+.header nav ul {flex-direction:column; align-items:center;}
+.header nav li {margin:10px 0;}
+}
+</style>
+
+<!-- 제이쿼리 -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+<!-- 헤더 (상단 고정) -->
+<header class="header">
+  <button class="menu-button">☰</button>
+  <div class="logo">LOGO</div>
+  <nav>
+    <ul>
+      <li data-target="home">Home</li>
+      <li data-target="about">About</li>
+      <li data-target="service">Service</li>
+      <li data-target="contact">Contact</li>
+    </ul>
+  </nav>
+</header>
+
+<!-- 사이드 메뉴 -->
+<nav class="side-menu">
+  <ul>
+    <li data-target="home">홈</li>
+    <li data-target="about">소개</li>
+    <li data-target="service">서비스</li>
+    <li data-target="contact">문의</li>
+  </ul>
+</nav>
+
+<!-- 오버레이 -->
+<div class="overlay"></div>
+
+<!-- 메인 콘텐츠 -->
+<div class="main-content">
+  <section id="home" class="section"><h1>Home</h1></section>
+  <section id="about" class="section"><h1>About</h1></section>
+  <section id="service" class="section"><h1>Service</h1></section>
+  <section id="contact" class="section"><h1>Contact</h1></section>
+</div>
+
+<!-- 스크립트 -->
+<script>
+$(function() {
+  // 햄버거 버튼 클릭
+  $('.menu-button').on('click', function() {
+    $(this).toggleClass('active').text(function(i, text){
+      return text === "☰" ? "✕" : "☰";
+    });
+    $('.side-menu').toggleClass('active');
+    $('.overlay').toggleClass('active');
+  });
+
+  // 오버레이 클릭 시 닫기
+  $('.overlay').on('click', function() {
+    $('.menu-button').removeClass('active').text('☰');
+    $('.side-menu').removeClass('active');
+    $(this).removeClass('active');
+  });
+
+  // 메뉴 클릭 시 부드럽게 스크롤
+  $('.header nav li, .side-menu li').on('click', function() {
+    var target = $(this).data('target');
+    if(target) {
+      $('html, body').animate({
+        scrollTop: $('#' + target).offset().top - 60
+      }, 600);
+    }
+    $('.menu-button').removeClass('active').text('☰');
+    $('.side-menu').removeClass('active');
+    $('.overlay').removeClass('active');
+  });
+
+  // 스크롤 위치에 따라 메뉴 활성화
+  function updateActiveMenu() {
+    var scrollPos = $(window).scrollTop();
+    $('.section').each(function() {
+      var top = $(this).offset().top - 70;
+      var bottom = top + $(this).outerHeight();
+      var id = $(this).attr('id');
+      if (scrollPos >= top && scrollPos < bottom) {
+        $('.header nav li, .side-menu li').removeClass('active');
+        $('.header nav li[data-target="' + id + '"], .side-menu li[data-target="' + id + '"]').addClass('active');
+      }
+    });
+  }
+  
+  $(window).on('scroll', updateActiveMenu);
+  $(document).ready(updateActiveMenu);
+});
+</script>
+
+</body>
+</html>
