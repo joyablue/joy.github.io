@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Swiper Slider Example</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <style>
+    body { margin: 0; background: #000; overflow-x: hidden; }
+    .swiper-container { width: 100%; height: 500px; position: relative; }
+    .swiper-slide { display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+    .swiper-slide img { width: 100%; height: auto; object-fit: cover; }
+    .slide-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white; opacity: 0; transition: opacity 0.6s ease, transform 0.6s ease; }
+    .slide-text h2 { font-size: 60px; margin-bottom: 20px; transform: translateY(30px); transition: transform 0.8s ease; }
+    .slide-text p { font-size: 20px; transform: translateY(50px); transition: transform 1s ease; }
+    .loading-bar { position: absolute; top: 0; left: 0; height: 4px; background: #ff7eb3; width: 0; transition: width 3s linear; z-index: 1000; }
+    .swiper-pagination { position: absolute; right: 30px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 10px; }
+    .swiper-pagination-bullet { width: 12px; height: 12px; background: rgba(255, 255, 255, 0.6); opacity: 1; border-radius: 50%; transition: all 0.3s; }
+    .swiper-pagination-bullet-active { background: #ff7eb3; transform: scale(1.3); }
+  </style>
+</head>
+<body>
+
+<div class="swiper-container">
+  <div class="loading-bar" id="loadingBar"></div>
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img src="https://placehold.co/1920x500?text=Test+Image&font=roboto" alt="랜덤이미지">
+      <div class="slide-text">
+        <h2>첫 번째 슬라이드</h2>
+        <p>설명 텍스트 첫 줄<br>설명 텍스트 둘째 줄</p>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <img src="https://placehold.co/1920x500?text=Test+Image&font=roboto" alt="랜덤이미지">
+      <div class="slide-text">
+        <h2>두 번째 슬라이드</h2>
+        <p>설명 텍스트 첫 줄<br>설명 텍스트 둘째 줄</p>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <img src="https://placehold.co/1920x500?text=Test+Image&font=roboto" alt="랜덤이미지">
+      <div class="slide-text">
+        <h2>세 번째 슬라이드</h2>
+        <p>설명 텍스트 첫 줄<br>설명 텍스트 둘째 줄</p>
+      </div>
+    </div>
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+// Swiper 초기화
+const swiper = new Swiper('.swiper-container', {
+  direction: 'horizontal', // 가로 슬라이드
+  loop: true, // 무한반복
+  pagination: { el: '.swiper-pagination', clickable: true },
+  mousewheel: true, // 마우스 휠로 넘김
+  autoplay: { delay: 4000, disableOnInteraction: false }, // 4초마다 자동 전환
+  speed: 800, // 슬라이드 넘어가는 속도
+  on: {
+    init: function () { // Swiper가 처음 초기화될 때
+      showTextAnimation(this.slides[this.activeIndex]);
+      startLoadingBar();
+    },
+    slideChangeTransitionStart: function () { // 슬라이드 전환 시작할 때
+      resetLoadingBar();
+    },
+    slideChangeTransitionEnd: function () { // 슬라이드 전환 끝났을 때
+      showTextAnimation(this.slides[this.activeIndex]);
+      startLoadingBar();
+    }
+  }
+});
+
+// 텍스트 등장 함수
+function showTextAnimation(slide) {
+  const text = slide.querySelector('.slide-text');
+  if (text) {
+    const title = text.querySelector('h2');
+    const desc = text.querySelector('p');
+    text.style.opacity = 1;
+    title.style.transform = 'translateY(0)';
+    desc.style.transform = 'translateY(0)';
+  }
+}
+
+// 텍스트 리셋 함수
+function resetTextAnimation(slide) {
+  const text = slide.querySelector('.slide-text');
+  if (text) {
+    const title = text.querySelector('h2');
+    const desc = text.querySelector('p');
+    text.style.opacity = 0;
+    title.style.transform = 'translateY(30px)';
+    desc.style.transform = 'translateY(50px)';
+  }
+}
+
+// 로딩바 함수
+function startLoadingBar() {
+  const bar = document.getElementById('loadingBar');
+  bar.style.transition = 'none';
+  bar.style.width = '0';
+  setTimeout(() => {
+    bar.style.transition = 'width 3.2s linear'; // 자동 넘김 시간 + 약간 여유
+    bar.style.width = '100%';
+  }, 50);
+}
+
+// 로딩바 초기화
+function resetLoadingBar() {
+  const bar = document.getElementById('loadingBar');
+  bar.style.transition = 'none';
+  bar.style.width = '0';
+}
+</script>
+
+</body>
+</html>
