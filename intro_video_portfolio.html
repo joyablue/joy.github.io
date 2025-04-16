@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>감성 홈페이지</title>
+  <style>
+    body { margin: 0; font-family: 'Arial', sans-serif; overflow-x: hidden; }
+    #intro { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: 9999; background-color: black; }
+    #intro iframe { width: 100%; height: 100%; pointer-events: none; }
+    .video-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; cursor: pointer; }
+
+    #navbar { position: fixed; top: 0; left: 0; width: 100%; background: rgba(0, 0, 0, 0.85); padding: 15px 0; display: none; z-index: 1000; }
+    #navbar ul { list-style: none; display: flex; justify-content: center; margin: 0; padding: 0; position: relative; }
+    #navbar ul li { margin: 0 30px; position: relative; }
+    #navbar ul li a { color: white; text-decoration: none; font-size: 18px; padding: 5px; position: relative; }
+    #navbar ul li a.active { font-weight: bold; }
+
+    .underline { position: absolute; bottom: 0; height: 2px; background: white; width: 60px; transition: all 0.3s ease; }
+
+    section { height: 100vh; padding: 100px 20px 0; box-sizing: border-box; }
+    section:nth-of-type(odd) { background: #f4f4f4; }
+    section:nth-of-type(even) { background: #e4e4e4; }
+
+    #contact form { max-width: 500px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    #contact .form-group { margin-bottom: 15px; }
+    #contact label { display: block; margin-bottom: 5px; font-weight: bold; }
+    #contact input, #contact textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px; }
+    #contact button { margin-top: 10px; padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+    #contact button:hover { background: #0056b3; }
+  </style>
+</head>
+<body>
+
+  <!-- Intro 영상 -->
+  <div id="intro">
+    <div class="video-overlay"></div>
+    <iframe src="https://www.youtube.com/embed/pXyf1nlZ4j8?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+
+  <!-- 네비게이션 -->
+  <div id="navbar">
+    <ul>
+      <li><a href="#home" class="active">HOME</a></li>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#services">SERVICES</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+      <div class="underline"></div>
+    </ul>
+  </div>
+
+  <!-- 메인 콘텐츠 -->
+  <div id="mainContent" style="display: none;">
+    <section id="home">
+      <h1>Welcome to My Page</h1>
+      <p>This is the home section.</p>
+    </section>
+    <section id="about">
+      <h1>About Me</h1>
+      <p>This is the about section.</p>
+    </section>
+    <section id="services">
+      <h1>Services</h1>
+      <p>This is the services section.</p>
+    </section>
+    <section id="contact">
+      <h1>Contact</h1>
+      <form>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Your email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" rows="4" placeholder="Your message" required></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      const underline = $('.underline');
+      const navbarLinks = $('#navbar ul li a');
+
+      // 인트로 클릭하면 intro 사라지고 메뉴/콘텐츠 등장
+      $('.video-overlay').on('click', function () {
+        $('#intro').fadeOut();
+        $('#navbar').fadeIn();
+        $('#mainContent').fadeIn();
+        setUnderline($('.active')); // HOME 위치로 밑줄 설정
+      });
+
+      // 밑줄 이동 함수
+      function setUnderline(target) {
+        const offset = target.offset();
+        const width = target.outerWidth();
+        underline.css({ left: offset.left, width: width });
+      }
+
+      // 메뉴 hover 시 밑줄 이동
+      navbarLinks.on('mouseenter', function () {
+        setUnderline($(this));
+      });
+
+      // 메뉴 클릭 시 active 고정 + 부드러운 스크롤
+      navbarLinks.on('click', function (e) {
+        e.preventDefault();
+        const target = $($(this).attr('href'));
+        $('html, body').animate({ scrollTop: target.offset().top - 60 }, 800);
+        navbarLinks.removeClass('active');
+        $(this).addClass('active');
+        setUnderline($(this));
+      });
+
+      // 스크롤 시 해당 구간에 맞게 active/baseline 이동
+      $(window).on('scroll', function () {
+        const scrollPos = $(document).scrollTop();
+        $('section').each(function () {
+          const top = $(this).offset().top - 100;
+          const bottom = top + $(this).outerHeight();
+          const id = $(this).attr('id');
+
+          if (scrollPos >= top && scrollPos < bottom) {
+            const currentLink = $('#navbar a[href="#' + id + '"]');
+            navbarLinks.removeClass('active');
+            currentLink.addClass('active');
+            setUnderline(currentLink);
+          }
+        });
+      });
+
+    });
+  </script>
+</body>
+</html>
