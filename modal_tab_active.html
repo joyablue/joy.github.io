@@ -1,0 +1,147 @@
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- jQuery UI -->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+<style>
+#menuList {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.menu-item {
+  padding: 8px 12px;
+  background: #eee;
+  color: #333;
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.menu-item.active {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
+.modal-scroll-area {
+  max-height: 300px;
+  overflow-y: auto;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+ 
+}
+
+.section {
+  height: 300px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  box-sizing:border-box;
+}
+
+ 
+</style>
+
+
+<!-- 모달 열기 버튼 -->
+<button id="openModalBtn">메뉴 열기</button>
+
+<!-- 모달 (메뉴 + 섹션 포함) -->
+<div id="menuModal" title="모달 전체 콘텐츠">
+  <!-- 메뉴 -->
+  <ul id="menuList">
+    <li><a href="#section1" class="menu-item">섹션 1</a></li>
+    <li><a href="#section2" class="menu-item">섹션 2</a></li>
+    <li><a href="#section3" class="menu-item">섹션 3</a></li>
+  </ul>
+
+  <!-- 섹션들 -->
+  <div class="modal-scroll-area">
+    <div id="section1" class="section"> 섹션 1 내용입니다.</div>
+    <div id="section2" class="section"> 섹션 2 내용입니다.</div>
+    <div id="section3" class="section"> 섹션 3 내용입니다.</div>
+  </div>
+</div>
+
+
+<script>
+$(document).ready(function() {
+  // 모달 초기화
+  $("#menuModal").dialog({
+    autoOpen: false, // 모달을 자동으로 열지 않음
+    modal: true, // 모달 창을 모달로 설정 (배경을 어두워짐)
+    width: 500, // 모달 창의 너비
+    height: 600 // 모달 창의 높이
+  });
+
+  // 모달 열기 버튼 클릭 시 모달 창 열기
+  $("#openModalBtn").click(function () {
+    $("#menuModal").dialog("open"); // 모달 열기
+  });
+
+  // 초기 active 상태 설정
+  $(".menu-item").removeClass("active");
+  $(`.menu-item[href="#section1"]`).addClass("active");
+
+  let isScrollingByClick = false; // 클릭으로 인한 스크롤 여부 체크 변수
+
+  // 메뉴 항목 클릭 시, 해당 섹션으로 스크롤
+  $(".menu-item").click(function (e) {
+    e.preventDefault(); // 기본 동작 (링크 이동)을 방지
+    const target = $(this).attr("href"); // 클릭된 메뉴의 href 속성 값 (목표 섹션 ID)
+    const container = $(".modal-scroll-area"); // 모달 내 스크롤 영역
+
+    const containerOffset = container.offset().top; // 모달 스크롤 영역의 상단 위치
+    const targetOffset = $(target).offset().top; // 목표 섹션의 상단 위치
+    const scrollTo = targetOffset - containerOffset + container.scrollTop(); // 목표 섹션으로 스크롤할 위치 계산
+
+    isScrollingByClick = true; // 클릭으로 스크롤 시작
+
+    container.animate({
+      scrollTop: scrollTo // 애니메이션을 사용해 스크롤 이동
+    }, 400, function () { // 400ms 동안 스크롤 애니메이션
+      isScrollingByClick = false; // 스크롤이 끝난 후 클릭 상태 변경
+
+      // 모든 메뉴 항목에서 active 클래스 제거
+      $(".menu-item").removeClass("active");
+      // 클릭된 메뉴 항목에 active 클래스 추가
+      $(`.menu-item[href="${target}"]`).addClass("active");
+    });
+  });
+
+  // 모달 내 스크롤이 발생할 때마다 실행되는 함수
+  $(".modal-scroll-area").on("scroll", function () {
+    // 클릭으로 인해 스크롤 이동 중이라면, 이 이벤트는 무시
+    if (isScrollingByClick) return;
+
+    const container = $(this); // 스크롤을 감지할 모달 영역
+    const scrollTop = container.scrollTop(); // 현재 스크롤 위치
+
+    // 각 섹션을 확인하여 해당 섹션에 대해 active 클래스 적용
+    $(".section").each(function () {
+      const $section = $(this); // 현재 섹션
+      const sectionTop = $section.offset().top - container.offset().top; // 섹션의 최상단 위치 (모달 내에서의 위치)
+      const id = $section.attr("id"); // 섹션의 ID (예: section1, section2)
+
+      // 각 섹션에 대한 오프셋 설정
+      let offset = 0;
+      if (id === 'section2') offset = 230; // 섹션2는 230px 이상 내려갔을 때 active 적용
+      else if (id === 'section3') offset = 500; // 섹션3은 500px 이상 내려갔을 때 active 적용
+
+      // 섹션의 상단 위치 + offset이 스크롤 위치보다 작을 때, 해당 섹션에 active 클래스 추가
+      if (scrollTop >= sectionTop + offset) {
+        // 기존의 active 클래스를 모두 제거
+        $(".menu-item").removeClass("active");
+        // 현재 섹션에 해당하는 메뉴 항목에 active 클래스를 추가
+        $(`.menu-item[href="#${id}"]`).addClass("active");
+      }
+    });
+  });
+});
+
+</script>
